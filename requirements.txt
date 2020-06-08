@@ -3,7 +3,7 @@ asgiref==3.2.7
 certifi==2020.4.5.1
 chardet==3.0.4
 defusedxml==0.6.0
-Django==3.0.7
+Django==3.0.6
 django-allauth==0.42.0
 django-cors-headers==3.3.0
 django-filter==2.2.0
@@ -12,6 +12,7 @@ graphene==2.1.8
 graphene-django==2.10.1
 graphql-core==2.3.2
 graphql-relay==2.0.1
+gunicorn==20.0.4
 idna==2.9
 oauthlib==3.1.0
 promise==2.3
@@ -24,5 +25,6 @@ Rx==1.6.1
 singledispatch==3.4.0.3
 six==1.15.0
 sqlparse==0.3.1
+supervisor==4.2.0
 urllib3==1.25.9
 whitenoise==5.1.0
