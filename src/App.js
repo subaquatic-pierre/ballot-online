@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { setContext } from 'apollo-link-context';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import BaseRouter from './routes';
+import Layout from './components/Layout';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:8000/graphql/',
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `JWT ${token}` : "",
+    }
+  }
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
+
+const App = () => (
+  <ApolloProvider client={client}>
+    <Router>
+      <Layout>
+        <BaseRouter />
+      </Layout>
+    </Router>
+  </ApolloProvider>
+);
 
 export default App;
