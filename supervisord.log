@@ -1,0 +1,95 @@
+2020-06-08 17:36:19,777 INFO supervisord started with pid 20770
+2020-06-08 17:36:20,781 INFO spawned: 'apollo' with pid 20773
+2020-06-08 17:36:20,784 INFO spawned: 'gunicorn' with pid 20774
+2020-06-08 17:36:20,786 INFO spawned: 'nginx' with pid 20775
+2020-06-08 17:36:21,818 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:36:21,818 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:36:21,818 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:36:23,322 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 17:36:24,326 INFO spawned: 'nginx' with pid 20807
+2020-06-08 17:36:24,846 WARN received SIGINT indicating exit request
+2020-06-08 17:36:24,847 CRIT unknown problem killing nginx (20807):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 17:36:24,847 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:36:25,991 INFO stopped: gunicorn (exit status 0)
+2020-06-08 17:36:25,996 INFO stopped: apollo (exit status 0)
+2020-06-08 17:36:57,354 INFO supervisord started with pid 20833
+2020-06-08 17:36:58,363 INFO spawned: 'apollo' with pid 20841
+2020-06-08 17:36:58,366 INFO spawned: 'gunicorn' with pid 20842
+2020-06-08 17:36:58,368 INFO spawned: 'nginx' with pid 20843
+2020-06-08 17:36:59,815 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:36:59,815 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:36:59,815 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:03,454 WARN received SIGINT indicating exit request
+2020-06-08 17:39:03,455 CRIT unknown problem killing nginx (20843):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 17:39:03,455 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:39:05,699 INFO stopped: gunicorn (exit status 0)
+2020-06-08 17:39:05,704 INFO stopped: apollo (exit status 0)
+2020-06-08 17:39:34,614 INFO supervisord started with pid 21129
+2020-06-08 17:39:35,617 INFO spawned: 'apollo' with pid 21133
+2020-06-08 17:39:35,619 INFO spawned: 'gunicorn' with pid 21134
+2020-06-08 17:39:35,621 INFO spawned: 'nginx' with pid 21135
+2020-06-08 17:39:36,644 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:36,644 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:36,644 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:38,150 WARN received SIGINT indicating exit request
+2020-06-08 17:39:38,152 CRIT unknown problem killing nginx (21135):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 17:39:38,152 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:39:50,297 INFO supervisord started with pid 21181
+2020-06-08 17:39:51,301 INFO spawned: 'apollo' with pid 21184
+2020-06-08 17:39:51,303 INFO spawned: 'gunicorn' with pid 21185
+2020-06-08 17:39:51,304 INFO spawned: 'nginx' with pid 21186
+2020-06-08 17:39:52,576 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:52,576 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:52,576 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:56,612 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 17:39:57,620 INFO spawned: 'gunicorn' with pid 21222
+2020-06-08 17:39:58,852 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:39:59,853 WARN received SIGINT indicating exit request
+2020-06-08 17:39:59,854 CRIT unknown problem killing nginx (21186):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 17:39:59,854 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:40:02,859 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:40:03,893 INFO stopped: gunicorn (exit status 1)
+2020-06-08 17:40:03,895 WARN received SIGINT indicating exit request
+2020-06-08 17:40:03,898 INFO stopped: apollo (exit status 0)
+2020-06-08 17:40:55,770 INFO supervisord started with pid 21254
+2020-06-08 17:40:56,773 INFO spawned: 'apollo' with pid 21258
+2020-06-08 17:40:56,775 INFO spawned: 'gunicorn' with pid 21259
+2020-06-08 17:40:56,776 INFO spawned: 'nginx' with pid 21260
+2020-06-08 17:40:58,234 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:40:58,234 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:40:58,234 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:41:17,216 WARN received SIGINT indicating exit request
+2020-06-08 17:41:17,217 CRIT unknown problem killing nginx (21260):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 17:41:17,217 INFO waiting for apollo, gunicorn to die
+2020-06-08 17:41:20,068 INFO stopped: gunicorn (exit status 0)
+2020-06-08 17:41:20,072 INFO stopped: apollo (exit status 0)
