@@ -93,3 +93,51 @@ PermissionError: [Errno 1] Operation not permitted
 2020-06-08 17:41:17,217 INFO waiting for apollo, gunicorn to die
 2020-06-08 17:41:20,068 INFO stopped: gunicorn (exit status 0)
 2020-06-08 17:41:20,072 INFO stopped: apollo (exit status 0)
+2020-06-08 17:58:14,994 INFO supervisord started with pid 21961
+2020-06-08 17:58:15,997 INFO spawned: 'apollo' with pid 21964
+2020-06-08 17:58:15,999 INFO spawned: 'gunicorn' with pid 21965
+2020-06-08 17:58:16,001 INFO spawned: 'nginx' with pid 21966
+2020-06-08 17:58:17,386 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:58:17,386 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:58:17,386 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 17:58:30,298 WARN received SIGINT indicating exit request
+2020-06-08 17:58:30,298 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 17:58:33,303 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 17:58:36,311 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 17:58:39,323 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 17:58:40,325 WARN killing 'nginx' (21966) with SIGKILL
+2020-06-08 17:58:40,327 INFO stopped: nginx (terminated by SIGKILL)
+2020-06-08 17:58:41,268 INFO stopped: gunicorn (exit status 0)
+2020-06-08 17:58:41,273 INFO stopped: apollo (exit status 0)
+2020-06-08 18:01:28,950 INFO supervisord started with pid 22168
+2020-06-08 18:01:29,953 INFO spawned: 'apollo' with pid 22172
+2020-06-08 18:01:29,955 INFO spawned: 'gunicorn' with pid 22173
+2020-06-08 18:01:29,957 INFO spawned: 'nginx' with pid 22174
+2020-06-08 18:01:31,388 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:01:31,388 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:01:31,388 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:01:58,071 WARN received SIGINT indicating exit request
+2020-06-08 18:01:58,072 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:01,078 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:04,086 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:07,092 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:08,093 WARN killing 'nginx' (22174) with SIGKILL
+2020-06-08 18:02:08,094 INFO stopped: nginx (terminated by SIGKILL)
+2020-06-08 18:02:09,341 INFO stopped: gunicorn (exit status 0)
+2020-06-08 18:02:10,350 INFO stopped: apollo (exit status 0)
+2020-06-08 18:02:17,250 INFO supervisord started with pid 22319
+2020-06-08 18:02:18,255 INFO spawned: 'apollo' with pid 22322
+2020-06-08 18:02:18,257 INFO spawned: 'gunicorn' with pid 22323
+2020-06-08 18:02:18,260 INFO spawned: 'nginx' with pid 22324
+2020-06-08 18:02:19,689 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:02:19,689 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:02:19,689 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 18:02:28,711 WARN received SIGINT indicating exit request
+2020-06-08 18:02:28,711 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:31,719 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:34,725 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:37,730 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 18:02:38,733 WARN killing 'nginx' (22324) with SIGKILL
+2020-06-08 18:02:38,734 INFO stopped: nginx (terminated by SIGKILL)
+2020-06-08 18:02:39,478 INFO stopped: gunicorn (exit status 0)
+2020-06-08 18:02:39,482 INFO stopped: apollo (exit status 0)

@@ -25,6 +25,10 @@ const getToken = () => {
 //   }).then(response => response)
 // }
 
+require('dotenv').config()
+const publicUrl = process.env
+console.log(publicUrl)
+
 const httpLink = createHttpLink({
   uri: 'http://127.0.0.1:8000/graphql/',
   fetchOptions: {
@@ -43,8 +47,6 @@ const authLink = setContext((_, { headers }) => {
     },
   }
 });
-
-console.log(document.cookie)
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
