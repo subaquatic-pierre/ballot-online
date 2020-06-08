@@ -8,3 +8,4 @@ worker_class = 'gevent'
 accesslog = '/home/ubuntu/log/gunicorn-access.log'
 errorlog = '/home/ubuntu/log/gunicorn-error.log'
 loglevel = 'debug'
+captureoutput = True
