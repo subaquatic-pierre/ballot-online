@@ -7,16 +7,6 @@ DEBUG = True
 
 WSGI_APPLICATION = 'app.wsgi.dev.application'
 if config.DATABASE == 'AWS':
-    # ENGINE = 'django.db.backends.postgresql'
-    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
-    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
-    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #     }
-    # }
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
