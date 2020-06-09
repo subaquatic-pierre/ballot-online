@@ -141,3 +141,3484 @@ PermissionError: [Errno 1] Operation not permitted
 2020-06-08 18:02:38,734 INFO stopped: nginx (terminated by SIGKILL)
 2020-06-08 18:02:39,478 INFO stopped: gunicorn (exit status 0)
 2020-06-08 18:02:39,482 INFO stopped: apollo (exit status 0)
+2020-06-08 22:02:39,161 INFO supervisord started with pid 8240
+2020-06-08 22:02:40,167 INFO spawned: 'apollo' with pid 8243
+2020-06-08 22:02:40,169 INFO spawned: 'gunicorn' with pid 8244
+2020-06-08 22:02:40,171 INFO spawned: 'nginx' with pid 8245
+2020-06-08 22:02:41,896 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:02:41,896 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:02:41,896 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:02:41,896 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:02:42,908 INFO spawned: 'gunicorn' with pid 8265
+2020-06-08 22:02:43,120 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:02:44,334 INFO spawned: 'gunicorn' with pid 8266
+2020-06-08 22:02:44,543 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:02:45,545 WARN received SIGINT indicating exit request
+2020-06-08 22:02:45,545 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 22:02:48,549 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 22:02:51,553 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 22:02:54,558 INFO waiting for apollo, gunicorn, nginx to die
+2020-06-08 22:02:55,560 WARN killing 'nginx' (8245) with SIGKILL
+2020-06-08 22:02:55,561 INFO stopped: nginx (terminated by SIGKILL)
+2020-06-08 22:02:56,568 INFO stopped: apollo (exit status 0)
+2020-06-08 22:04:18,210 INFO supervisord started with pid 8421
+2020-06-08 22:04:19,212 INFO spawned: 'apollo' with pid 8424
+2020-06-08 22:04:19,214 INFO spawned: 'gunicorn' with pid 8425
+2020-06-08 22:04:19,216 INFO spawned: 'nginx' with pid 8426
+2020-06-08 22:04:20,212 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:04:21,213 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:04:21,213 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:05:54,592 WARN received SIGINT indicating exit request
+2020-06-08 22:05:54,633 CRIT unknown problem killing nginx (8426):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 22:05:54,633 INFO waiting for apollo, gunicorn to die
+2020-06-08 22:05:56,268 INFO stopped: gunicorn (exit status 0)
+2020-06-08 22:05:56,272 INFO stopped: apollo (exit status 0)
+2020-06-08 22:52:53,633 INFO supervisord started with pid 11610
+2020-06-08 22:52:54,635 INFO spawned: 'nginx' with pid 11613
+2020-06-08 22:52:54,636 INFO spawned: 'apollo' with pid 11614
+2020-06-08 22:52:54,638 INFO spawned: 'gunicorn' with pid 11615
+2020-06-08 22:52:54,653 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:54,876 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:52:54,978 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:52:54,998 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140177096070080 for <Subprocess at 140177095945024 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:52:54,999 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140177096070400 for <Subprocess at 140177095945024 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:52:54,999 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:52:54,999 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:52:55,153 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:55,654 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:55,654 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:52:55,654 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:52:56,155 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:56,156 INFO spawned: 'gunicorn' with pid 11635
+2020-06-08 22:52:56,405 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:52:56,421 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140177096070480 for <Subprocess at 140177095945024 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:52:56,421 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140177096069600 for <Subprocess at 140177095945024 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:52:56,421 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:52:56,421 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:52:56,656 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:57,157 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:52:57,158 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140177095943584 for <Subprocess at 140177095944384 with name nginx in state RUNNING> (stdout)>
+2020-06-08 22:52:57,158 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140177095944064 for <Subprocess at 140177095944384 with name nginx in state RUNNING> (stderr)>
+2020-06-08 22:52:57,158 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:52:57,158 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:52:57,463 INFO spawned: 'nginx' with pid 11640
+2020-06-08 22:52:57,463 WARN received SIGINT indicating exit request
+2020-06-08 22:52:57,464 DEBG killing apollo (pid 11614) with signal SIGTERM
+2020-06-08 22:52:57,464 DEBG killing nginx (pid 11640) with signal SIGTERM
+2020-06-08 22:52:57,464 INFO waiting for nginx, apollo to die
+2020-06-08 22:52:57,464 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:52:57,468 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140177095942944 for <Subprocess at 140177095944544 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:52:57,468 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140177095942224 for <Subprocess at 140177095944544 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:52:57,468 INFO stopped: apollo (exit status 0)
+2020-06-08 22:52:57,468 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:52:57,486 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:57,987 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:58,487 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:58,987 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:59,227 WARN received SIGINT indicating exit request
+2020-06-08 22:52:59,492 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:52:59,996 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:52:59,997 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140177095944864 for <Subprocess at 140177095944384 with name nginx in state STOPPING> (stdout)>
+2020-06-08 22:52:59,997 DEBG fd 20 closed, stopped monitoring <POutputDispatcher at 140177095943584 for <Subprocess at 140177095944384 with name nginx in state STOPPING> (stderr)>
+2020-06-08 22:52:59,997 INFO stopped: nginx (exit status 1)
+2020-06-08 22:52:59,997 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:53:17,106 INFO supervisord started with pid 11682
+2020-06-08 22:53:18,108 INFO spawned: 'nginx' with pid 11685
+2020-06-08 22:53:18,109 INFO spawned: 'apollo' with pid 11686
+2020-06-08 22:53:18,110 INFO spawned: 'gunicorn' with pid 11687
+2020-06-08 22:53:18,335 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:53:18,357 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:53:18,375 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 139934634439616 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:53:18,375 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 139934634439936 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:53:18,375 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:53:18,375 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:53:19,377 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:53:19,377 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:53:19,378 INFO spawned: 'gunicorn' with pid 11705
+2020-06-08 22:53:19,618 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:53:19,637 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 139934634440016 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:53:19,638 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 139934634439136 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:53:19,638 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:53:19,638 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:53:21,642 INFO spawned: 'gunicorn' with pid 11714
+2020-06-08 22:53:21,899 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:53:21,917 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 139934634440096 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:53:21,917 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 139934634439856 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:53:21,917 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:53:21,917 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:53:24,923 INFO spawned: 'gunicorn' with pid 11715
+2020-06-08 22:53:25,162 DEBG 'gunicorn' stderr output:
+
+Error: class uri 'gevent' invalid or not found: 
+
+[Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 14, in <module>
+    import gevent
+ModuleNotFoundError: No module named 'gevent'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/util.py", line 99, in load_class
+    mod = importlib.import_module('.'.join(components))
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pierre/.local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 16, in <module>
+    raise RuntimeError("gevent worker requires gevent 1.4 or higher")
+RuntimeError: gevent worker requires gevent 1.4 or higher
+]
+
+
+2020-06-08 22:53:25,179 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 139934634439616 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:53:25,179 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 139934634440176 for <Subprocess at 139934634314560 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:53:25,179 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:53:25,179 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:53:26,181 INFO gave up: gunicorn entered FATAL state, too many start retries too quickly
+2020-06-08 22:53:50,528 WARN received SIGINT indicating exit request
+2020-06-08 22:53:50,528 DEBG killing apollo (pid 11686) with signal SIGTERM
+2020-06-08 22:53:50,528 DEBG killing nginx (pid 11685) with signal SIGTERM
+2020-06-08 22:53:50,529 CRIT unknown problem killing nginx (11685):Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/supervisor/process.py", line 432, in kill
+    options.kill(pid, sig)
+  File "/usr/lib/python2.7/dist-packages/supervisor/options.py", line 1239, in kill
+    os.kill(pid, signal)
+OSError: [Errno 1] Operation not permitted
+
+2020-06-08 22:53:50,529 INFO waiting for apollo to die
+2020-06-08 22:53:50,529 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:53:50,533 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139934634312480 for <Subprocess at 139934634314080 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:53:50,533 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 139934634311760 for <Subprocess at 139934634314080 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:53:50,533 INFO stopped: apollo (exit status 0)
+2020-06-08 22:53:50,533 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:27,231 INFO supervisord started with pid 11754
+2020-06-08 22:54:28,234 INFO spawned: 'nginx' with pid 11757
+2020-06-08 22:54:28,235 INFO spawned: 'apollo' with pid 11758
+2020-06-08 22:54:28,237 INFO spawned: 'gunicorn' with pid 11759
+2020-06-08 22:54:28,254 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:28,461 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:54:28,470 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11759] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f9e878c1a60>
+  on_reload: <function OnReload.on_reload at 0x7f9e878c1b70>
+  when_ready: <function WhenReady.when_ready at 0x7f9e878c1c80>
+  pre_fork: <function Prefork.pre_fork at 0x7f9e878c1d90>
+  post_fork: <function Postfork.post_fork at 0x7f9e878c1ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9e878e6048>
+  worker_int: <function WorkerInt.worker_int at 0x7f9e878e6158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9e878e6268>
+  pre_exec: <function PreExec.pre_exec at 0x7f9e878e6378>
+  pre_request: <function PreRequest.pre_request at 0x7f9e878e6488>
+  post_request: <function PostRequest.post_request at 0x7f9e878e6510>
+  child_exit: <function ChildExit.child_exit at 0x7f9e878e6620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9e878e6730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f9e878e6840>
+  on_exit: <function OnExit.on_exit at 0x7f9e878e6950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:54:28,470 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11759] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:54:28,471 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11759] [DEBUG] Arbiter booted
+
+2020-06-08 22:54:28,471 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11759] [INFO] Listening at: http://127.0.0.1:8000 (11759)
+[2020-06-08 22:54:28 +0400] [11759] [INFO] Using worker: gevent
+
+2020-06-08 22:54:28,474 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11773] [INFO] Booting worker with pid: 11773
+
+2020-06-08 22:54:28,530 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11774] [INFO] Booting worker with pid: 11774
+
+2020-06-08 22:54:28,534 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11775] [INFO] Booting worker with pid: 11775
+
+2020-06-08 22:54:28,565 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11776] [INFO] Booting worker with pid: 11776
+
+2020-06-08 22:54:28,648 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11759] [DEBUG] 4 workers
+
+2020-06-08 22:54:28,657 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11773] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:28,657 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11773] [INFO] Worker exiting (pid: 11773)
+
+2020-06-08 22:54:28,680 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11774] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:28,681 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11774] [INFO] Worker exiting (pid: 11774)
+
+2020-06-08 22:54:28,708 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11775] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:28,708 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11775] [INFO] Worker exiting (pid: 11775)
+
+2020-06-08 22:54:28,744 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11776] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:28,744 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:28 +0400] [11776] [INFO] Worker exiting (pid: 11776)
+
+2020-06-08 22:54:28,754 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:28,795 DEBG 'gunicorn' stderr output:
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 209, in run
+    self.sleep()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 357, in sleep
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+2020-06-08 22:54:28,835 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140477970239648 for <Subprocess at 140477970242368 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:54:28,835 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140477970367664 for <Subprocess at 140477970242368 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:54:28,835 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:54:28,835 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:29,259 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:29,259 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:54:29,259 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:54:29,759 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:30,259 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:30,260 INFO spawned: 'gunicorn' with pid 11777
+2020-06-08 22:54:30,487 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc902e96a60>
+  on_reload: <function OnReload.on_reload at 0x7fc902e96b70>
+  when_ready: <function WhenReady.when_ready at 0x7fc902e96c80>
+  pre_fork: <function Prefork.pre_fork at 0x7fc902e96d90>
+  post_fork: <function Postfork.post_fork at 0x7fc902e96ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc902ebb048>
+  worker_int: <function WorkerInt.worker_int at 0x7fc902ebb158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc902ebb268>
+  pre_exec: <function PreExec.pre_exec at 0x7fc902ebb378>
+  pre_request: <function PreRequest.pre_request at 0x7fc902ebb488>
+  post_request: <function PostRequest.post_request at 0x7fc902ebb510>
+  child_exit: <function ChildExit.child_exit at 0x7fc902ebb620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc902ebb730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc902ebb840>
+  on_exit: <function OnExit.on_exit at 0x7fc902ebb950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:54:30,487 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:54:30,488 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [DEBUG] Arbiter booted
+
+2020-06-08 22:54:30,488 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [INFO] Listening at: http://127.0.0.1:8000 (11777)
+
+2020-06-08 22:54:30,488 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [INFO] Using worker: gevent
+
+2020-06-08 22:54:30,491 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11780] [INFO] Booting worker with pid: 11780
+
+2020-06-08 22:54:30,509 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11781] [INFO] Booting worker with pid: 11781
+
+2020-06-08 22:54:30,518 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11782] [INFO] Booting worker with pid: 11782
+
+2020-06-08 22:54:30,519 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11783] [INFO] Booting worker with pid: 11783
+
+2020-06-08 22:54:30,571 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [DEBUG] 4 workers
+
+2020-06-08 22:54:30,643 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11780] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:30,644 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11780] [INFO] Worker exiting (pid: 11780)
+
+2020-06-08 22:54:30,651 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11783] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:30,652 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11783] [INFO] Worker exiting (pid: 11783)
+
+2020-06-08 22:54:30,673 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11782] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:30,674 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11782] [INFO] Worker exiting (pid: 11782)
+
+2020-06-08 22:54:30,680 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11781] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:30,680 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11781] [INFO] Worker exiting (pid: 11781)
+
+2020-06-08 22:54:30,760 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:54:30,761 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140477970240928 for <Subprocess at 140477970241728 with name nginx in state RUNNING> (stdout)>
+2020-06-08 22:54:30,762 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140477970241408 for <Subprocess at 140477970241728 with name nginx in state RUNNING> (stderr)>
+2020-06-08 22:54:30,762 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:54:30,762 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:30,810 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:30 +0400] [11777] [INFO] Shutting down: Master
+[2020-06-08 22:54:30 +0400] [11777] [INFO] Reason: Worker failed to boot.
+
+2020-06-08 22:54:30,811 INFO spawned: 'nginx' with pid 11784
+2020-06-08 22:54:30,828 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:30,837 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140477970239648 for <Subprocess at 140477970242368 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:54:30,837 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140477970367424 for <Subprocess at 140477970242368 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:54:30,837 INFO exited: gunicorn (exit status 3; not expected)
+2020-06-08 22:54:30,837 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:31,330 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:31,830 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:31,830 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:54:32,330 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:32,831 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:33,331 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:54:33,333 INFO spawned: 'gunicorn' with pid 11794
+2020-06-08 22:54:33,333 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140477970242208 for <Subprocess at 140477970241728 with name nginx in state RUNNING> (stdout)>
+2020-06-08 22:54:33,333 DEBG fd 20 closed, stopped monitoring <POutputDispatcher at 140477970240928 for <Subprocess at 140477970241728 with name nginx in state RUNNING> (stderr)>
+2020-06-08 22:54:33,333 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:54:33,334 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:33,552 INFO spawned: 'nginx' with pid 11795
+2020-06-08 22:54:33,552 WARN received SIGINT indicating exit request
+2020-06-08 22:54:33,552 DEBG killing gunicorn (pid 11794) with signal SIGTERM
+2020-06-08 22:54:33,553 DEBG killing apollo (pid 11758) with signal SIGTERM
+2020-06-08 22:54:33,553 DEBG killing nginx (pid 11795) with signal SIGTERM
+2020-06-08 22:54:33,553 INFO waiting for nginx, apollo, gunicorn to die
+2020-06-08 22:54:33,553 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:54:33,554 DEBG fd 22 closed, stopped monitoring <POutputDispatcher at 140477970239648 for <Subprocess at 140477970242368 with name gunicorn in state STOPPING> (stdout)>
+2020-06-08 22:54:33,554 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140477970367744 for <Subprocess at 140477970242368 with name gunicorn in state STOPPING> (stderr)>
+2020-06-08 22:54:33,554 INFO stopped: gunicorn (terminated by SIGTERM)
+2020-06-08 22:54:33,554 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:33,557 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140477970240288 for <Subprocess at 140477970241888 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:54:33,557 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140477970239568 for <Subprocess at 140477970241888 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:54:33,557 INFO stopped: apollo (exit status 0)
+2020-06-08 22:54:33,557 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:33,571 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:34,071 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:34,572 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:35,074 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:35,574 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:54:36,074 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:54:36,076 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140477970242048 for <Subprocess at 140477970241728 with name nginx in state STOPPING> (stdout)>
+2020-06-08 22:54:36,076 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 140477970242208 for <Subprocess at 140477970241728 with name nginx in state STOPPING> (stderr)>
+2020-06-08 22:54:36,076 INFO stopped: nginx (exit status 1)
+2020-06-08 22:54:36,076 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:54,632 INFO supervisord started with pid 11811
+2020-06-08 22:54:55,635 INFO spawned: 'nginx' with pid 11814
+2020-06-08 22:54:55,636 INFO spawned: 'apollo' with pid 11815
+2020-06-08 22:54:55,638 INFO spawned: 'gunicorn' with pid 11816
+2020-06-08 22:54:55,867 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:54:55,875 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11816] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f72042b0a60>
+  on_reload: <function OnReload.on_reload at 0x7f72042b0b70>
+  when_ready: <function WhenReady.when_ready at 0x7f72042b0c80>
+  pre_fork: <function Prefork.pre_fork at 0x7f72042b0d90>
+  post_fork: <function Postfork.post_fork at 0x7f72042b0ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f72042d5048>
+  worker_int: <function WorkerInt.worker_int at 0x7f72042d5158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f72042d5268>
+  pre_exec: <function PreExec.pre_exec at 0x7f72042d5378>
+  pre_request: <function PreRequest.pre_request at 0x7f72042d5488>
+  post_request: <function PostRequest.post_request at 0x7f72042d5510>
+  child_exit: <function ChildExit.child_exit at 0x7f72042d5620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f72042d5730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f72042d5840>
+  on_exit: <function OnExit.on_exit at 0x7f72042d5950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:54:55,875 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11816] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:54:55,876 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11816] [DEBUG] Arbiter booted
+[2020-06-08 22:54:55 +0400] [11816] [INFO] Listening at: http://127.0.0.1:8000 (11816)
+
+2020-06-08 22:54:55,876 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11816] [INFO] Using worker: gevent
+
+2020-06-08 22:54:55,879 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11844] [INFO] Booting worker with pid: 11844
+
+2020-06-08 22:54:55,964 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:55 +0400] [11845] [INFO] Booting worker with pid: 11845
+
+2020-06-08 22:54:56,016 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11844] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:56,016 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11844] [INFO] Worker exiting (pid: 11844)
+
+2020-06-08 22:54:56,033 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11846] [INFO] Booting worker with pid: 11846
+
+2020-06-08 22:54:56,121 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11845] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:56,122 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11845] [INFO] Worker exiting (pid: 11845)
+
+2020-06-08 22:54:56,166 DEBG 'gunicorn' stderr output:
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+2020-06-08 22:54:56,168 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11846] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:56,168 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:56 +0400] [11846] [INFO] Worker exiting (pid: 11846)
+
+2020-06-08 22:54:56,204 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140191580151968 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:54:56,204 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140191580279984 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:54:56,204 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:54:56,205 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:57,206 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:54:57,206 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:54:57,207 INFO spawned: 'gunicorn' with pid 11847
+2020-06-08 22:54:57,436 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11847] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa0919b9a60>
+  on_reload: <function OnReload.on_reload at 0x7fa0919b9b70>
+  when_ready: <function WhenReady.when_ready at 0x7fa0919b9c80>
+  pre_fork: <function Prefork.pre_fork at 0x7fa0919b9d90>
+  post_fork: <function Postfork.post_fork at 0x7fa0919b9ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa0919de048>
+  worker_int: <function WorkerInt.worker_int at 0x7fa0919de158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa0919de268>
+  pre_exec: <function PreExec.pre_exec at 0x7fa0919de378>
+  pre_request: <function PreRequest.pre_request at 0x7fa0919de488>
+  post_request: <function PostRequest.post_request at 0x7fa0919de510>
+  child_exit: <function ChildExit.child_exit at 0x7fa0919de620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa0919de730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa0919de840>
+  on_exit: <function OnExit.on_exit at 0x7fa0919de950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:54:57,437 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11847] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:54:57,437 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11847] [DEBUG] Arbiter booted
+[2020-06-08 22:54:57 +0400] [11847] [INFO] Listening at: http://127.0.0.1:8000 (11847)
+
+2020-06-08 22:54:57,437 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11847] [INFO] Using worker: gevent
+
+2020-06-08 22:54:57,439 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11850] [INFO] Booting worker with pid: 11850
+
+2020-06-08 22:54:57,461 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11851] [INFO] Booting worker with pid: 11851
+
+2020-06-08 22:54:57,497 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11852] [INFO] Booting worker with pid: 11852
+
+2020-06-08 22:54:57,585 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11850] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+[2020-06-08 22:54:57 +0400] [11850] [INFO] Worker exiting (pid: 11850)
+
+2020-06-08 22:54:57,594 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11853] [INFO] Booting worker with pid: 11853
+
+2020-06-08 22:54:57,615 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11851] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:57,615 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11851] [INFO] Worker exiting (pid: 11851)
+
+2020-06-08 22:54:57,653 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11852] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:54:57,653 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:57 +0400] [11852] [INFO] Worker exiting (pid: 11852)
+
+2020-06-08 22:54:57,701 DEBG 'gunicorn' stderr output:
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+2020-06-08 22:54:57,736 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140191580151968 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:54:57,736 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140191580279744 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:54:57,736 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:54:57,736 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:54:59,741 INFO spawned: 'gunicorn' with pid 11854
+2020-06-08 22:54:59,973 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:59 +0400] [11854] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe24a4eda60>
+  on_reload: <function OnReload.on_reload at 0x7fe24a4edb70>
+  when_ready: <function WhenReady.when_ready at 0x7fe24a4edc80>
+  pre_fork: <function Prefork.pre_fork at 0x7fe24a4edd90>
+  post_fork: <function Postfork.post_fork at 0x7fe24a4edea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe24a512048>
+  worker_int: <function WorkerInt.worker_int at 0x7fe24a512158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe24a512268>
+  pre_exec: <function PreExec.pre_exec at 0x7fe24a512378>
+  pre_request: <function PreRequest.pre_request at 0x7fe24a512488>
+  post_request: <function PostRequest.post_request at 0x7fe24a512510>
+  child_exit: <function ChildExit.child_exit at 0x7fe24a512620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe24a512730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe24a512840>
+  on_exit: <function OnExit.on_exit at 0x7fe24a512950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:54:59,974 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:59 +0400] [11854] [INFO] Starting gunicorn 20.0.4
+[2020-06-08 22:54:59 +0400] [11854] [DEBUG] Arbiter booted
+[2020-06-08 22:54:59 +0400] [11854] [INFO] Listening at: http://127.0.0.1:8000 (11854)
+
+2020-06-08 22:54:59,974 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:59 +0400] [11854] [INFO] Using worker: gevent
+
+2020-06-08 22:54:59,976 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:54:59 +0400] [11857] [INFO] Booting worker with pid: 11857
+
+2020-06-08 22:55:00,060 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11858] [INFO] Booting worker with pid: 11858
+
+2020-06-08 22:55:00,119 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11859] [INFO] Booting worker with pid: 11859
+
+2020-06-08 22:55:00,120 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11857] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+
+2020-06-08 22:55:00,120 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11857] [INFO] Worker exiting (pid: 11857)
+
+2020-06-08 22:55:00,133 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11860] [INFO] Booting worker with pid: 11860
+
+2020-06-08 22:55:00,193 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11858] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+[2020-06-08 22:55:00 +0400] [11858] [INFO] Worker exiting (pid: 11858)
+
+2020-06-08 22:55:00,232 DEBG 'gunicorn' stderr output:
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+    self.spawn_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "venv/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+2020-06-08 22:55:00,266 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:00 +0400] [11859] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 162, in init_process
+    super().init_process()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 119, in init_process
+    self.load_wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 144, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 49, in load
+    return self.load_wsgiapp()
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 39, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/gunicorn/util.py", line 358, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+[2020-06-08 22:55:00 +0400] [11859] [INFO] Worker exiting (pid: 11859)
+
+2020-06-08 22:55:00,285 DEBG fd 27 closed, stopped monitoring <POutputDispatcher at 140191580151968 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stdout)>
+2020-06-08 22:55:00,285 DEBG fd 31 closed, stopped monitoring <POutputDispatcher at 140191580280064 for <Subprocess at 140191580154688 with name gunicorn in state STARTING> (stderr)>
+2020-06-08 22:55:00,285 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 22:55:00,285 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:55:01,457 WARN received SIGINT indicating exit request
+2020-06-08 22:55:01,458 DEBG killing apollo (pid 11815) with signal SIGTERM
+2020-06-08 22:55:01,458 DEBG killing nginx (pid 11814) with signal SIGTERM
+2020-06-08 22:55:01,458 CRIT unknown problem killing nginx (11814):Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/supervisor/process.py", line 432, in kill
+    options.kill(pid, sig)
+  File "/usr/lib/python2.7/dist-packages/supervisor/options.py", line 1239, in kill
+    os.kill(pid, signal)
+OSError: [Errno 1] Operation not permitted
+
+2020-06-08 22:55:01,459 INFO waiting for apollo to die
+2020-06-08 22:55:01,459 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:55:01,462 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140191580152608 for <Subprocess at 140191580154208 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:55:01,462 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140191580151888 for <Subprocess at 140191580154208 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:55:01,462 INFO stopped: apollo (exit status 0)
+2020-06-08 22:55:01,462 DEBG received SIGCLD indicating a child quit
+2020-06-08 22:55:25,274 INFO supervisord started with pid 11902
+2020-06-08 22:55:26,277 INFO spawned: 'gunicorn' with pid 11905
+2020-06-08 22:55:26,279 INFO spawned: 'apollo' with pid 11906
+2020-06-08 22:55:26,281 INFO spawned: 'nginx' with pid 11907
+2020-06-08 22:55:26,510 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:55:26,526 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11905] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fcd710fca60>
+  on_reload: <function OnReload.on_reload at 0x7fcd710fcb70>
+  when_ready: <function WhenReady.when_ready at 0x7fcd710fcc80>
+  pre_fork: <function Prefork.pre_fork at 0x7fcd710fcd90>
+  post_fork: <function Postfork.post_fork at 0x7fcd710fcea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fcd71121048>
+  worker_int: <function WorkerInt.worker_int at 0x7fcd71121158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fcd71121268>
+  pre_exec: <function PreExec.pre_exec at 0x7fcd71121378>
+  pre_request: <function PreRequest.pre_request at 0x7fcd71121488>
+  post_request: <function PostRequest.post_request at 0x7fcd71121510>
+  child_exit: <function ChildExit.child_exit at 0x7fcd71121620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fcd71121730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fcd71121840>
+  on_exit: <function OnExit.on_exit at 0x7fcd71121950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:55:26,527 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11905] [INFO] Starting gunicorn 20.0.4
+[2020-06-08 22:55:26 +0400] [11905] [DEBUG] Arbiter booted
+[2020-06-08 22:55:26 +0400] [11905] [INFO] Listening at: http://127.0.0.1:8000 (11905)
+[2020-06-08 22:55:26 +0400] [11905] [INFO] Using worker: gevent
+
+2020-06-08 22:55:26,529 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11935] [INFO] Booting worker with pid: 11935
+
+2020-06-08 22:55:26,568 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11936] [INFO] Booting worker with pid: 11936
+
+2020-06-08 22:55:26,595 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11937] [INFO] Booting worker with pid: 11937
+
+2020-06-08 22:55:26,687 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11938] [INFO] Booting worker with pid: 11938
+
+2020-06-08 22:55:26,768 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:55:26 +0400] [11905] [DEBUG] 4 workers
+
+2020-06-08 22:55:27,770 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:55:27,770 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:55:27,770 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:55:42,854 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:55:42 +0000] [11937] [DEBUG] POST /graphql/
+
+2020-06-08 22:55:42,867 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:55:42 +0000] [11936] [DEBUG] POST /graphql/
+
+2020-06-08 22:55:42,935 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:55:42 +0000] "POST /graphql/ HTTP/1.1" 200 80 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:55:43,012 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:55:43 +0000] "POST /graphql/ HTTP/1.1" 200 1691 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:56:13,399 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:13 +0000] [11937] [DEBUG] POST /graphql/
+
+2020-06-08 22:56:13,400 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:13 +0000] [11938] [DEBUG] POST /graphql/
+
+2020-06-08 22:56:13,411 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:56:13 +0000] "POST /graphql/ HTTP/1.1" 200 80 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:56:13,502 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:56:13 +0000] "POST /graphql/ HTTP/1.1" 200 1691 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:56:19,395 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:19 +0000] [11937] [DEBUG] POST /graphql/
+
+2020-06-08 22:56:19,397 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:19 +0000] [11935] [DEBUG] POST /graphql/
+
+2020-06-08 22:56:19,404 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:56:19 +0000] "POST /graphql/ HTTP/1.1" 200 80 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:56:19,544 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:18:56:19 +0000] "POST /graphql/ HTTP/1.1" 200 1691 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 22:56:22,552 WARN received SIGINT indicating exit request
+2020-06-08 22:56:22,553 DEBG killing nginx (pid 11907) with signal SIGTERM
+2020-06-08 22:56:22,553 CRIT unknown problem killing nginx (11907):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 22:56:22,554 DEBG killing apollo (pid 11906) with signal SIGTERM
+2020-06-08 22:56:22,554 DEBG killing gunicorn (pid 11905) with signal SIGTERM
+2020-06-08 22:56:22,554 INFO waiting for gunicorn, apollo to die
+2020-06-08 22:56:22,554 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:22 +0400] [11905] [INFO] Handling signal: term
+
+2020-06-08 22:56:22,554 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:56:22,557 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139736227866272 for <Subprocess at 139736227865376 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:56:22,558 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 139736227380528 for <Subprocess at 139736227865376 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:56:22,558 INFO stopped: apollo (exit status 0)
+2020-06-08 22:56:22,558 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:56:23,184 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:23 +0000] [11935] [INFO] Worker exiting (pid: 11935)
+
+2020-06-08 22:56:23,249 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:23 +0000] [11937] [INFO] Worker exiting (pid: 11937)
+
+2020-06-08 22:56:23,260 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:23 +0000] [11936] [INFO] Worker exiting (pid: 11936)
+
+2020-06-08 22:56:23,343 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:56:23 +0000] [11938] [INFO] Worker exiting (pid: 11938)
+
+2020-06-08 22:56:23,560 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:23 +0400] [11905] [INFO] Shutting down: Master
+
+2020-06-08 22:56:23,594 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139736227720216 for <Subprocess at 139736227767800 with name gunicorn in state STOPPING> (stdout)>
+2020-06-08 22:56:23,594 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 139736227866328 for <Subprocess at 139736227767800 with name gunicorn in state STOPPING> (stderr)>
+2020-06-08 22:56:23,594 INFO stopped: gunicorn (exit status 0)
+2020-06-08 22:56:23,594 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:56:58,508 INFO supervisord started with pid 12031
+2020-06-08 22:56:59,511 INFO spawned: 'gunicorn' with pid 12034
+2020-06-08 22:56:59,512 INFO spawned: 'apollo' with pid 12035
+2020-06-08 22:56:59,514 INFO spawned: 'nginx' with pid 12036
+2020-06-08 22:56:59,540 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:56:59,735 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:56:59,755 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4388caea60>
+  on_reload: <function OnReload.on_reload at 0x7f4388caeb70>
+  when_ready: <function WhenReady.when_ready at 0x7f4388caec80>
+  pre_fork: <function Prefork.pre_fork at 0x7f4388caed90>
+  post_fork: <function Postfork.post_fork at 0x7f4388caeea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4388cd3048>
+  worker_int: <function WorkerInt.worker_int at 0x7f4388cd3158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4388cd3268>
+  pre_exec: <function PreExec.pre_exec at 0x7f4388cd3378>
+  pre_request: <function PreRequest.pre_request at 0x7f4388cd3488>
+  post_request: <function PostRequest.post_request at 0x7f4388cd3510>
+  child_exit: <function ChildExit.child_exit at 0x7f4388cd3620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4388cd3730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4388cd3840>
+  on_exit: <function OnExit.on_exit at 0x7f4388cd3950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:56:59,756 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:56:59,756 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [DEBUG] Arbiter booted
+
+2020-06-08 22:56:59,757 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [INFO] Listening at: http://127.0.0.1:8000 (12034)
+
+2020-06-08 22:56:59,757 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [INFO] Using worker: gevent
+
+2020-06-08 22:56:59,761 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12050] [INFO] Booting worker with pid: 12050
+
+2020-06-08 22:56:59,773 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12051] [INFO] Booting worker with pid: 12051
+
+2020-06-08 22:56:59,852 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12052] [INFO] Booting worker with pid: 12052
+
+2020-06-08 22:56:59,866 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12053] [INFO] Booting worker with pid: 12053
+
+2020-06-08 22:56:59,895 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:56:59 +0400] [12034] [DEBUG] 4 workers
+
+2020-06-08 22:57:00,041 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:00,541 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:00,541 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:00,541 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:00,541 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:01,042 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:01,542 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:02,048 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:57:02,050 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140193245916296 for <Subprocess at 140193246401312 with name nginx in state RUNNING> (stdout)>
+2020-06-08 22:57:02,050 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140193245916800 for <Subprocess at 140193246401312 with name nginx in state RUNNING> (stderr)>
+2020-06-08 22:57:02,050 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:57:02,050 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:57:03,061 INFO spawned: 'nginx' with pid 12068
+2020-06-08 22:57:03,078 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:03,578 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:04,079 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:04,079 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:04,579 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:05,080 DEBG 'nginx' stderr output:
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+2020-06-08 22:57:05,080 WARN received SIGINT indicating exit request
+2020-06-08 22:57:05,080 DEBG killing nginx (pid 12068) with signal SIGTERM
+2020-06-08 22:57:05,081 CRIT unknown problem killing nginx (12068):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 22:57:05,082 DEBG killing apollo (pid 12035) with signal SIGTERM
+2020-06-08 22:57:05,082 DEBG killing gunicorn (pid 12034) with signal SIGTERM
+2020-06-08 22:57:05,083 INFO waiting for gunicorn, apollo to die
+2020-06-08 22:57:05,084 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:57:05,084 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:05 +0400] [12034] [INFO] Handling signal: term
+
+2020-06-08 22:57:05,091 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140193246402208 for <Subprocess at 140193246401256 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:57:05,091 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 140193245916520 for <Subprocess at 140193246401256 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:57:05,091 INFO stopped: apollo (exit status 0)
+2020-06-08 22:57:05,091 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:57:05,323 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:05 +0000] [12051] [INFO] Worker exiting (pid: 12051)
+
+2020-06-08 22:57:05,353 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:05 +0000] [12050] [INFO] Worker exiting (pid: 12050)
+
+2020-06-08 22:57:05,404 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:05 +0000] [12052] [INFO] Worker exiting (pid: 12052)
+
+2020-06-08 22:57:05,435 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:05 +0000] [12053] [INFO] Worker exiting (pid: 12053)
+
+2020-06-08 22:57:05,581 DEBG 'nginx' stderr output:
+nginx: [emerg] still could not bind()
+
+2020-06-08 22:57:05,582 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140193245916800 for <Subprocess at 140193246401312 with name nginx in state UNKNOWN> (stdout)>
+2020-06-08 22:57:05,582 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140193245916296 for <Subprocess at 140193246401312 with name nginx in state UNKNOWN> (stderr)>
+2020-06-08 22:57:34,924 INFO supervisord started with pid 12106
+2020-06-08 22:57:35,927 INFO spawned: 'gunicorn' with pid 12109
+2020-06-08 22:57:35,929 INFO spawned: 'apollo' with pid 12110
+2020-06-08 22:57:35,931 INFO spawned: 'nginx' with pid 12111
+2020-06-08 22:57:36,162 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:57:36,163 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12109] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8f3e1dda60>
+  on_reload: <function OnReload.on_reload at 0x7f8f3e1ddb70>
+  when_ready: <function WhenReady.when_ready at 0x7f8f3e1ddc80>
+  pre_fork: <function Prefork.pre_fork at 0x7f8f3e1ddd90>
+  post_fork: <function Postfork.post_fork at 0x7f8f3e1ddea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8f3e202048>
+  worker_int: <function WorkerInt.worker_int at 0x7f8f3e202158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8f3e202268>
+  pre_exec: <function PreExec.pre_exec at 0x7f8f3e202378>
+  pre_request: <function PreRequest.pre_request at 0x7f8f3e202488>
+  post_request: <function PostRequest.post_request at 0x7f8f3e202510>
+  child_exit: <function ChildExit.child_exit at 0x7f8f3e202620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8f3e202730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8f3e202840>
+  on_exit: <function OnExit.on_exit at 0x7f8f3e202950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:57:36,164 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12109] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:57:36,164 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12109] [DEBUG] Arbiter booted
+[2020-06-08 22:57:36 +0400] [12109] [INFO] Listening at: http://127.0.0.1:8000 (12109)
+
+2020-06-08 22:57:36,164 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12109] [INFO] Using worker: gevent
+
+2020-06-08 22:57:36,166 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12139] [INFO] Booting worker with pid: 12139
+
+2020-06-08 22:57:36,241 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12140] [INFO] Booting worker with pid: 12140
+
+2020-06-08 22:57:36,267 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12141] [INFO] Booting worker with pid: 12141
+
+2020-06-08 22:57:36,276 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12142] [INFO] Booting worker with pid: 12142
+
+2020-06-08 22:57:36,366 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:36 +0400] [12109] [DEBUG] 4 workers
+
+2020-06-08 22:57:37,368 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:37,368 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:37,368 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:57:58,398 WARN received SIGINT indicating exit request
+2020-06-08 22:57:58,398 DEBG killing nginx (pid 12111) with signal SIGTERM
+2020-06-08 22:57:58,399 CRIT unknown problem killing nginx (12111):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 22:57:58,399 DEBG killing apollo (pid 12110) with signal SIGTERM
+2020-06-08 22:57:58,399 DEBG killing gunicorn (pid 12109) with signal SIGTERM
+2020-06-08 22:57:58,399 INFO waiting for gunicorn, apollo to die
+2020-06-08 22:57:58,399 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:58 +0400] [12109] [INFO] Handling signal: term
+
+2020-06-08 22:57:58,400 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 22:57:58,403 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139683625686744 for <Subprocess at 139683625685792 with name apollo in state STOPPING> (stdout)>
+2020-06-08 22:57:58,403 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 139683625201056 for <Subprocess at 139683625685792 with name apollo in state STOPPING> (stderr)>
+2020-06-08 22:57:58,403 INFO stopped: apollo (exit status 0)
+2020-06-08 22:57:58,403 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:57:58,801 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:58 +0000] [12139] [INFO] Worker exiting (pid: 12139)
+
+2020-06-08 22:57:58,830 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:58 +0000] [12141] [INFO] Worker exiting (pid: 12141)
+
+2020-06-08 22:57:58,872 DEBG 'gunicorn' stderr output:
+[2020-06-08 18:57:58 +0000] [12142] [INFO] Worker exiting (pid: 12142)
+[2020-06-08 18:57:58 +0000] [12140] [INFO] Worker exiting (pid: 12140)
+
+2020-06-08 22:57:59,104 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:57:59 +0400] [12109] [INFO] Shutting down: Master
+
+2020-06-08 22:57:59,134 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139683693359792 for <Subprocess at 139683625588216 with name gunicorn in state STOPPING> (stdout)>
+2020-06-08 22:57:59,134 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 139683625200664 for <Subprocess at 139683625588216 with name gunicorn in state STOPPING> (stderr)>
+2020-06-08 22:57:59,135 INFO stopped: gunicorn (exit status 0)
+2020-06-08 22:57:59,135 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:58:04,451 INFO daemonizing the supervisord process
+2020-06-08 22:58:04,452 INFO supervisord started with pid 12184
+2020-06-08 22:58:05,455 INFO spawned: 'gunicorn' with pid 12185
+2020-06-08 22:58:05,456 INFO spawned: 'apollo' with pid 12186
+2020-06-08 22:58:05,458 INFO spawned: 'nginx' with pid 12187
+2020-06-08 22:58:05,465 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 22:58:05,466 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 139969808502008 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stdout)>
+2020-06-08 22:58:05,466 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 139969808502512 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stderr)>
+2020-06-08 22:58:05,466 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:58:05,466 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:58:05,669 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 22:58:05,680 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12185] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fee1ddb3a60>
+  on_reload: <function OnReload.on_reload at 0x7fee1ddb3b70>
+  when_ready: <function WhenReady.when_ready at 0x7fee1ddb3c80>
+  pre_fork: <function Prefork.pre_fork at 0x7fee1ddb3d90>
+  post_fork: <function Postfork.post_fork at 0x7fee1ddb3ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fee1ddd8048>
+  worker_int: <function WorkerInt.worker_int at 0x7fee1ddd8158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fee1ddd8268>
+  pre_exec: <function PreExec.pre_exec at 0x7fee1ddd8378>
+  pre_request: <function PreRequest.pre_request at 0x7fee1ddd8488>
+  post_request: <function PostRequest.post_request at 0x7fee1ddd8510>
+  child_exit: <function ChildExit.child_exit at 0x7fee1ddd8620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fee1ddd8730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fee1ddd8840>
+  on_exit: <function OnExit.on_exit at 0x7fee1ddd8950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 22:58:05,681 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12185] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 22:58:05,681 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12185] [DEBUG] Arbiter booted
+[2020-06-08 22:58:05 +0400] [12185] [INFO] Listening at: http://127.0.0.1:8000 (12185)
+
+2020-06-08 22:58:05,681 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12185] [INFO] Using worker: gevent
+
+2020-06-08 22:58:05,683 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12200] [INFO] Booting worker with pid: 12200
+
+2020-06-08 22:58:05,705 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12201] [INFO] Booting worker with pid: 12201
+
+2020-06-08 22:58:05,733 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12202] [INFO] Booting worker with pid: 12202
+
+2020-06-08 22:58:05,736 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12203] [INFO] Booting worker with pid: 12203
+
+2020-06-08 22:58:05,805 DEBG 'gunicorn' stderr output:
+[2020-06-08 22:58:05 +0400] [12185] [DEBUG] 4 workers
+
+2020-06-08 22:58:06,806 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:58:06,806 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 22:58:06,807 INFO spawned: 'nginx' with pid 12208
+2020-06-08 22:58:06,815 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 22:58:06,815 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 139969808502568 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stdout)>
+2020-06-08 22:58:06,815 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 139969808502456 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stderr)>
+2020-06-08 22:58:06,815 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:58:06,815 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:58:08,819 INFO spawned: 'nginx' with pid 12210
+2020-06-08 22:58:08,826 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 22:58:08,827 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 139969808502400 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stdout)>
+2020-06-08 22:58:08,827 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 139969808502008 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stderr)>
+2020-06-08 22:58:08,827 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:58:08,827 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:58:11,833 INFO spawned: 'nginx' with pid 12220
+2020-06-08 22:58:11,840 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 22:58:11,840 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 139969808502680 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stdout)>
+2020-06-08 22:58:11,841 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 139969808502568 for <Subprocess at 139969808986800 with name nginx in state STARTING> (stderr)>
+2020-06-08 22:58:11,841 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 22:58:11,841 DEBG received SIGCHLD indicating a child quit
+2020-06-08 22:58:12,848 INFO gave up: nginx entered FATAL state, too many start retries too quickly
+2020-06-08 23:00:15,385 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:15 +0400] [12185] [INFO] Handling signal: term
+
+2020-06-08 23:00:15,385 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 23:00:15,391 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 139969808501672 for <Subprocess at 139969808986744 with name apollo in state RUNNING> (stdout)>
+2020-06-08 23:00:15,391 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 139969808502232 for <Subprocess at 139969808986744 with name apollo in state RUNNING> (stderr)>
+2020-06-08 23:00:15,391 INFO exited: apollo (exit status 0; expected)
+2020-06-08 23:00:15,391 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:00:15,442 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:00:15 +0000] [12200] [INFO] Worker exiting (pid: 12200)
+
+2020-06-08 23:00:15,455 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:00:15 +0000] [12203] [INFO] Worker exiting (pid: 12203)
+[2020-06-08 19:00:15 +0000] [12201] [INFO] Worker exiting (pid: 12201)
+
+2020-06-08 23:00:15,481 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:00:15 +0000] [12202] [INFO] Worker exiting (pid: 12202)
+
+2020-06-08 23:00:15,686 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:15 +0400] [12185] [INFO] Shutting down: Master
+
+2020-06-08 23:00:15,710 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 139969808501504 for <Subprocess at 139969808893264 with name gunicorn in state RUNNING> (stdout)>
+2020-06-08 23:00:15,710 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 139969808501840 for <Subprocess at 139969808893264 with name gunicorn in state RUNNING> (stderr)>
+2020-06-08 23:00:15,710 INFO exited: gunicorn (exit status 0; expected)
+2020-06-08 23:00:15,710 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:00:35,227 INFO supervisord started with pid 12398
+2020-06-08 23:00:36,230 INFO spawned: 'gunicorn' with pid 12401
+2020-06-08 23:00:36,231 INFO spawned: 'apollo' with pid 12402
+2020-06-08 23:00:36,233 INFO spawned: 'nginx' with pid 12403
+2020-06-08 23:00:36,459 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 23:00:36,471 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12401] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb0e9254a60>
+  on_reload: <function OnReload.on_reload at 0x7fb0e9254b70>
+  when_ready: <function WhenReady.when_ready at 0x7fb0e9254c80>
+  pre_fork: <function Prefork.pre_fork at 0x7fb0e9254d90>
+  post_fork: <function Postfork.post_fork at 0x7fb0e9254ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb0e9279048>
+  worker_int: <function WorkerInt.worker_int at 0x7fb0e9279158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb0e9279268>
+  pre_exec: <function PreExec.pre_exec at 0x7fb0e9279378>
+  pre_request: <function PreRequest.pre_request at 0x7fb0e9279488>
+  post_request: <function PostRequest.post_request at 0x7fb0e9279510>
+  child_exit: <function ChildExit.child_exit at 0x7fb0e9279620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb0e9279730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb0e9279840>
+  on_exit: <function OnExit.on_exit at 0x7fb0e9279950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 23:00:36,471 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12401] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 23:00:36,472 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12401] [DEBUG] Arbiter booted
+[2020-06-08 23:00:36 +0400] [12401] [INFO] Listening at: http://127.0.0.1:8000 (12401)
+[2020-06-08 23:00:36 +0400] [12401] [INFO] Using worker: gevent
+
+2020-06-08 23:00:36,474 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12431] [INFO] Booting worker with pid: 12431
+
+2020-06-08 23:00:36,492 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12432] [INFO] Booting worker with pid: 12432
+
+2020-06-08 23:00:36,528 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12433] [INFO] Booting worker with pid: 12433
+
+2020-06-08 23:00:36,566 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12434] [INFO] Booting worker with pid: 12434
+
+2020-06-08 23:00:36,571 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:00:36 +0400] [12401] [DEBUG] 4 workers
+
+2020-06-08 23:00:37,573 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:00:37,573 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:00:37,573 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:00:43,139 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:00:43 +0000] [12432] [DEBUG] POST /graphql/
+
+2020-06-08 23:00:43,139 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:00:43 +0000] [12434] [DEBUG] POST /graphql/
+
+2020-06-08 23:00:43,200 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:19:00:43 +0000] "POST /graphql/ HTTP/1.1" 200 80 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 23:00:43,219 DEBG 'gunicorn' stdout output:
+127.0.0.1 - - [08/Jun/2020:19:00:43 +0000] "POST /graphql/ HTTP/1.1" 200 1691 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+
+2020-06-08 23:01:19,317 WARN received SIGINT indicating exit request
+2020-06-08 23:01:19,317 DEBG killing nginx (pid 12403) with signal SIGTERM
+2020-06-08 23:01:19,318 CRIT unknown problem killing nginx (12403):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 23:01:19,319 DEBG killing apollo (pid 12402) with signal SIGTERM
+2020-06-08 23:01:19,319 DEBG killing gunicorn (pid 12401) with signal SIGTERM
+2020-06-08 23:01:19,319 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:01:19,319 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:19 +0400] [12401] [INFO] Handling signal: term
+
+2020-06-08 23:01:19,320 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 23:01:19,324 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140030953154096 for <Subprocess at 140030953153144 with name apollo in state STOPPING> (stdout)>
+2020-06-08 23:01:19,324 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 140030952668408 for <Subprocess at 140030953153144 with name apollo in state STOPPING> (stderr)>
+2020-06-08 23:01:19,324 INFO stopped: apollo (exit status 0)
+2020-06-08 23:01:19,324 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:20,103 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:01:20 +0000] [12431] [INFO] Worker exiting (pid: 12431)
+
+2020-06-08 23:01:20,119 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:01:20 +0000] [12432] [INFO] Worker exiting (pid: 12432)
+
+2020-06-08 23:01:20,131 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:01:20 +0000] [12433] [INFO] Worker exiting (pid: 12433)
+
+2020-06-08 23:01:20,183 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:01:20 +0000] [12434] [INFO] Worker exiting (pid: 12434)
+
+2020-06-08 23:01:20,327 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:20 +0400] [12401] [INFO] Shutting down: Master
+
+2020-06-08 23:01:20,365 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140030952668016 for <Subprocess at 140030953063760 with name gunicorn in state STOPPING> (stderr)>
+2020-06-08 23:01:20,365 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140031020827312 for <Subprocess at 140030953063760 with name gunicorn in state STOPPING> (stdout)>
+2020-06-08 23:01:21,371 INFO stopped: gunicorn (exit status 0)
+2020-06-08 23:01:21,371 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:34,076 INFO daemonizing the supervisord process
+2020-06-08 23:01:34,076 INFO supervisord started with pid 12521
+2020-06-08 23:01:35,079 INFO spawned: 'gunicorn' with pid 12522
+2020-06-08 23:01:35,080 INFO spawned: 'apollo' with pid 12523
+2020-06-08 23:01:35,082 INFO spawned: 'nginx' with pid 12524
+2020-06-08 23:01:35,089 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 23:01:35,090 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140602999057768 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stdout)>
+2020-06-08 23:01:35,090 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140602999058272 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stderr)>
+2020-06-08 23:01:35,090 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:01:35,091 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:35,304 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:5000
+
+2020-06-08 23:01:35,312 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12522] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe35c8b3a60>
+  on_reload: <function OnReload.on_reload at 0x7fe35c8b3b70>
+  when_ready: <function WhenReady.when_ready at 0x7fe35c8b3c80>
+  pre_fork: <function Prefork.pre_fork at 0x7fe35c8b3d90>
+  post_fork: <function Postfork.post_fork at 0x7fe35c8b3ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe35c8d8048>
+  worker_int: <function WorkerInt.worker_int at 0x7fe35c8d8158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe35c8d8268>
+  pre_exec: <function PreExec.pre_exec at 0x7fe35c8d8378>
+  pre_request: <function PreRequest.pre_request at 0x7fe35c8d8488>
+  post_request: <function PostRequest.post_request at 0x7fe35c8d8510>
+  child_exit: <function ChildExit.child_exit at 0x7fe35c8d8620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe35c8d8730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe35c8d8840>
+  on_exit: <function OnExit.on_exit at 0x7fe35c8d8950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 23:01:35,313 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12522] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 23:01:35,313 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12522] [DEBUG] Arbiter booted
+[2020-06-08 23:01:35 +0400] [12522] [INFO] Listening at: http://127.0.0.1:8000 (12522)
+
+2020-06-08 23:01:35,313 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12522] [INFO] Using worker: gevent
+
+2020-06-08 23:01:35,315 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12545] [INFO] Booting worker with pid: 12545
+
+2020-06-08 23:01:35,368 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12546] [INFO] Booting worker with pid: 12546
+
+2020-06-08 23:01:35,435 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12547] [INFO] Booting worker with pid: 12547
+
+2020-06-08 23:01:35,520 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12549] [INFO] Booting worker with pid: 12549
+
+2020-06-08 23:01:35,573 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:01:35 +0400] [12522] [DEBUG] 4 workers
+
+2020-06-08 23:01:36,574 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:01:36,574 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:01:36,575 INFO spawned: 'nginx' with pid 12554
+2020-06-08 23:01:36,583 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 23:01:36,584 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140602999058328 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stdout)>
+2020-06-08 23:01:36,584 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140602999058160 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stderr)>
+2020-06-08 23:01:36,584 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:01:36,584 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:38,589 INFO spawned: 'nginx' with pid 12561
+2020-06-08 23:01:38,596 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 23:01:38,596 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140602999057320 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stdout)>
+2020-06-08 23:01:38,596 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140602999057768 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stderr)>
+2020-06-08 23:01:38,596 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:01:38,597 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:41,605 INFO spawned: 'nginx' with pid 12603
+2020-06-08 23:01:41,614 DEBG 'nginx' stderr output:
+sudo: no tty present and no askpass program specified
+
+2020-06-08 23:01:41,614 DEBG fd 24 closed, stopped monitoring <POutputDispatcher at 140602999058272 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stdout)>
+2020-06-08 23:01:41,614 DEBG fd 30 closed, stopped monitoring <POutputDispatcher at 140602999058328 for <Subprocess at 140602999542504 with name nginx in state STARTING> (stderr)>
+2020-06-08 23:01:41,614 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:01:41,614 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:01:41,615 INFO gave up: nginx entered FATAL state, too many start retries too quickly
+2020-06-08 23:01:59,736 INFO supervisord started with pid 12638
+2020-06-08 23:02:00,738 INFO spawned: 'gunicorn' with pid 12641
+2020-06-08 23:02:00,740 INFO spawned: 'apollo' with pid 12642
+2020-06-08 23:02:00,741 INFO spawned: 'nginx' with pid 12643
+2020-06-08 23:02:00,961 DEBG 'apollo' stdout output:
+INFO: Accepting connections at http://localhost:34205
+
+2020-06-08 23:02:00,985 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:00 +0400] [12641] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f82e1aeea60>
+  on_reload: <function OnReload.on_reload at 0x7f82e1aeeb70>
+  when_ready: <function WhenReady.when_ready at 0x7f82e1aeec80>
+  pre_fork: <function Prefork.pre_fork at 0x7f82e1aeed90>
+  post_fork: <function Postfork.post_fork at 0x7f82e1aeeea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f82e1b13048>
+  worker_int: <function WorkerInt.worker_int at 0x7f82e1b13158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f82e1b13268>
+  pre_exec: <function PreExec.pre_exec at 0x7f82e1b13378>
+  pre_request: <function PreRequest.pre_request at 0x7f82e1b13488>
+  post_request: <function PostRequest.post_request at 0x7f82e1b13510>
+  child_exit: <function ChildExit.child_exit at 0x7f82e1b13620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f82e1b13730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f82e1b13840>
+  on_exit: <function OnExit.on_exit at 0x7f82e1b13950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 23:02:00,985 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:00 +0400] [12641] [INFO] Starting gunicorn 20.0.4
+
+2020-06-08 23:02:00,985 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:00 +0400] [12641] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:00 +0400] [12641] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+
+2020-06-08 23:02:00,985 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:00 +0400] [12641] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:01,987 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:02:01,987 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:02:01,987 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:02:01,987 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:01 +0400] [12641] [ERROR] Connection in use: ('127.0.0.1', 8000)
+
+2020-06-08 23:02:01,988 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:01 +0400] [12641] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:01 +0400] [12641] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:02,990 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:02 +0400] [12641] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:02 +0400] [12641] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:02 +0400] [12641] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:03,991 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:03 +0400] [12641] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:03 +0400] [12641] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+
+2020-06-08 23:02:03,992 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:03 +0400] [12641] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:04,993 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:04 +0400] [12641] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:04 +0400] [12641] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:04 +0400] [12641] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:05,995 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:05 +0400] [12641] [ERROR] Can't connect to ('127.0.0.1', 8000)
+
+2020-06-08 23:02:06,024 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140500503593648 for <Subprocess at 140500435822072 with name gunicorn in state RUNNING> (stdout)>
+2020-06-08 23:02:06,024 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140500435434408 for <Subprocess at 140500435822072 with name gunicorn in state RUNNING> (stderr)>
+2020-06-08 23:02:06,024 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:02:06,024 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:02:07,027 INFO spawned: 'gunicorn' with pid 12679
+2020-06-08 23:02:07,028 WARN received SIGINT indicating exit request
+2020-06-08 23:02:07,028 DEBG killing nginx (pid 12643) with signal SIGTERM
+2020-06-08 23:02:07,029 CRIT unknown problem killing nginx (12643):Traceback (most recent call last):
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/process.py", line 466, in kill
+    options.kill(pid, sig)
+  File "/home/pierre/Projects/ballot-online/venv/lib/python3.6/site-packages/supervisor/options.py", line 1302, in kill
+    os.kill(pid, signal)
+PermissionError: [Errno 1] Operation not permitted
+
+2020-06-08 23:02:07,029 DEBG killing apollo (pid 12642) with signal SIGTERM
+2020-06-08 23:02:07,029 DEBG killing gunicorn (pid 12679) with signal SIGTERM
+2020-06-08 23:02:07,029 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:02:07,030 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 23:02:07,033 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140500435920488 for <Subprocess at 140500435919592 with name apollo in state STOPPING> (stdout)>
+2020-06-08 23:02:07,033 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 140500435434800 for <Subprocess at 140500435919592 with name apollo in state STOPPING> (stderr)>
+2020-06-08 23:02:07,034 INFO stopped: apollo (exit status 0)
+2020-06-08 23:02:07,034 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:02:07,269 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:07 +0400] [12679] [DEBUG] Current configuration:
+  config: /home/pierre/Projects/ballot-online/backend/app/gunicorn.config.py
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 4
+  worker_class: gevent
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/pierre/Projects/ballot-online/backend
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: app.wsgi.dev:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f88de407a60>
+  on_reload: <function OnReload.on_reload at 0x7f88de407b70>
+  when_ready: <function WhenReady.when_ready at 0x7f88de407c80>
+  pre_fork: <function Prefork.pre_fork at 0x7f88de407d90>
+  post_fork: <function Postfork.post_fork at 0x7f88de407ea0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f88de42c048>
+  worker_int: <function WorkerInt.worker_int at 0x7f88de42c158>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f88de42c268>
+  pre_exec: <function PreExec.pre_exec at 0x7f88de42c378>
+  pre_request: <function PreRequest.pre_request at 0x7f88de42c488>
+  post_request: <function PostRequest.post_request at 0x7f88de42c510>
+  child_exit: <function ChildExit.child_exit at 0x7f88de42c620>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f88de42c730>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f88de42c840>
+  on_exit: <function OnExit.on_exit at 0x7f88de42c950>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+
+2020-06-08 23:02:07,269 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:07 +0400] [12679] [INFO] Starting gunicorn 20.0.4
+[2020-06-08 23:02:07 +0400] [12679] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:07 +0400] [12679] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:07 +0400] [12679] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:08,271 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:08 +0400] [12679] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:08 +0400] [12679] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+
+2020-06-08 23:02:08,272 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:08 +0400] [12679] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:09,274 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:09 +0400] [12679] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:09 +0400] [12679] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+
+2020-06-08 23:02:09,274 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:09 +0400] [12679] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:10,275 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:10 +0400] [12679] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:10 +0400] [12679] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:10 +0400] [12679] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:10,275 INFO waiting for gunicorn to die
+2020-06-08 23:02:11,276 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:11 +0400] [12679] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2020-06-08 23:02:11 +0400] [12679] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2020-06-08 23:02:11 +0400] [12679] [ERROR] Retrying in 1 second.
+
+2020-06-08 23:02:12,278 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:12 +0400] [12679] [ERROR] Can't connect to ('127.0.0.1', 8000)
+
+2020-06-08 23:02:12,308 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140500435919760 for <Subprocess at 140500435822072 with name gunicorn in state STOPPING> (stdout)>
+2020-06-08 23:02:12,308 DEBG fd 20 closed, stopped monitoring <POutputDispatcher at 140500435434520 for <Subprocess at 140500435822072 with name gunicorn in state STOPPING> (stderr)>
+2020-06-08 23:02:12,308 INFO stopped: gunicorn (exit status 1)
+2020-06-08 23:02:12,308 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:02:28,381 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:28 +0400] [12522] [INFO] Handling signal: term
+
+2020-06-08 23:02:28,382 DEBG 'apollo' stdout output:
+
+INFO: Gracefully shutting down. Please wait...
+
+2020-06-08 23:02:28,385 DEBG fd 11 closed, stopped monitoring <POutputDispatcher at 140602999057432 for <Subprocess at 140602999542448 with name apollo in state RUNNING> (stdout)>
+2020-06-08 23:02:28,386 DEBG fd 23 closed, stopped monitoring <POutputDispatcher at 140602999057992 for <Subprocess at 140602999542448 with name apollo in state RUNNING> (stderr)>
+2020-06-08 23:02:28,386 INFO exited: apollo (exit status 0; expected)
+2020-06-08 23:02:28,386 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:02:28,929 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:02:28 +0000] [12545] [INFO] Worker exiting (pid: 12545)
+
+2020-06-08 23:02:28,999 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:02:28 +0000] [12546] [INFO] Worker exiting (pid: 12546)
+
+2020-06-08 23:02:29,095 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:02:29 +0000] [12547] [INFO] Worker exiting (pid: 12547)
+
+2020-06-08 23:02:29,139 DEBG 'gunicorn' stderr output:
+[2020-06-08 19:02:29 +0000] [12549] [INFO] Worker exiting (pid: 12549)
+
+2020-06-08 23:02:29,296 DEBG 'gunicorn' stderr output:
+[2020-06-08 23:02:29 +0400] [12522] [INFO] Shutting down: Master
+
+2020-06-08 23:02:29,320 DEBG fd 8 closed, stopped monitoring <POutputDispatcher at 140602999057264 for <Subprocess at 140602999448968 with name gunicorn in state RUNNING> (stdout)>
+2020-06-08 23:02:29,320 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140602999057600 for <Subprocess at 140602999448968 with name gunicorn in state RUNNING> (stderr)>
+2020-06-08 23:02:29,320 INFO exited: gunicorn (exit status 0; expected)
+2020-06-08 23:02:29,320 DEBG received SIGCHLD indicating a child quit
+2020-06-08 23:07:58,181 INFO daemonizing the supervisord process
+2020-06-08 23:07:58,181 INFO supervisord started with pid 13137
+2020-06-08 23:07:59,184 INFO spawned: 'gunicorn' with pid 13138
+2020-06-08 23:07:59,186 INFO spawned: 'apollo' with pid 13139
+2020-06-08 23:07:59,187 INFO spawned: 'nginx' with pid 13140
+2020-06-08 23:07:59,195 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:08:00,568 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:08:00,572 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:08:00,574 INFO spawned: 'nginx' with pid 13169
+2020-06-08 23:08:00,594 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:08:02,812 INFO spawned: 'nginx' with pid 13170
+2020-06-08 23:08:02,819 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:08:05,828 INFO spawned: 'nginx' with pid 13229
+2020-06-08 23:08:05,835 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:08:06,837 INFO gave up: nginx entered FATAL state, too many start retries too quickly
+2020-06-08 23:09:00,944 WARN received SIGTERM indicating exit request
+2020-06-08 23:09:00,944 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:09:00,949 INFO stopped: apollo (exit status 0)
+2020-06-08 23:09:01,371 INFO stopped: gunicorn (exit status 0)
+2020-06-08 23:09:44,150 INFO daemonizing the supervisord process
+2020-06-08 23:09:44,150 INFO supervisord started with pid 13334
+2020-06-08 23:09:45,154 INFO spawned: 'gunicorn' with pid 13336
+2020-06-08 23:09:45,155 INFO spawned: 'apollo' with pid 13337
+2020-06-08 23:09:45,157 INFO spawned: 'nginx' with pid 13338
+2020-06-08 23:09:45,164 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:09:46,587 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:09:46,587 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:09:46,589 INFO spawned: 'nginx' with pid 13367
+2020-06-08 23:09:46,606 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:09:48,609 INFO spawned: 'nginx' with pid 13389
+2020-06-08 23:09:48,616 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:09:51,626 INFO spawned: 'nginx' with pid 13422
+2020-06-08 23:09:51,633 INFO exited: nginx (exit status 1; not expected)
+2020-06-08 23:09:52,635 INFO gave up: nginx entered FATAL state, too many start retries too quickly
+2020-06-08 23:10:51,723 WARN received SIGTERM indicating exit request
+2020-06-08 23:10:51,724 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:10:51,728 INFO stopped: apollo (exit status 0)
+2020-06-08 23:10:52,360 INFO stopped: gunicorn (exit status 0)
+2020-06-08 23:11:47,024 INFO daemonizing the supervisord process
+2020-06-08 23:11:47,025 INFO supervisord started with pid 13521
+2020-06-08 23:11:48,028 INFO spawned: 'gunicorn' with pid 13522
+2020-06-08 23:11:48,031 INFO spawned: 'apollo' with pid 13523
+2020-06-08 23:11:49,429 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:11:49,429 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:29,944 INFO daemonizing the supervisord process
+2020-06-08 23:18:29,944 INFO supervisord started with pid 14138
+2020-06-08 23:18:30,948 INFO spawned: 'gunicorn' with pid 14139
+2020-06-08 23:18:30,950 INFO spawned: 'apollo' with pid 14140
+2020-06-08 23:18:32,175 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:32,175 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:36,208 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:18:37,211 INFO spawned: 'gunicorn' with pid 14180
+2020-06-08 23:18:38,428 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:43,462 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:18:44,465 INFO spawned: 'gunicorn' with pid 14192
+2020-06-08 23:18:45,683 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:50,715 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:18:51,718 INFO spawned: 'gunicorn' with pid 14212
+2020-06-08 23:18:52,946 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:18:56,978 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:18:57,981 INFO spawned: 'gunicorn' with pid 14223
+2020-06-08 23:18:59,221 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:03,252 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:04,255 INFO spawned: 'gunicorn' with pid 14246
+2020-06-08 23:19:05,475 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:10,508 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:11,511 INFO spawned: 'gunicorn' with pid 14253
+2020-06-08 23:19:12,727 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:16,759 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:17,770 INFO spawned: 'gunicorn' with pid 14256
+2020-06-08 23:19:18,988 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:24,021 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:25,025 INFO spawned: 'gunicorn' with pid 14260
+2020-06-08 23:19:26,244 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:30,281 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:31,285 INFO spawned: 'gunicorn' with pid 14275
+2020-06-08 23:19:32,504 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:37,538 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:38,541 INFO spawned: 'gunicorn' with pid 14278
+2020-06-08 23:19:39,764 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:44,806 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:45,809 INFO spawned: 'gunicorn' with pid 14282
+2020-06-08 23:19:47,027 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:52,059 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:19:53,061 INFO spawned: 'gunicorn' with pid 14285
+2020-06-08 23:19:54,279 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:19:59,314 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:00,318 INFO spawned: 'gunicorn' with pid 14290
+2020-06-08 23:20:01,541 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:06,573 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:07,578 INFO spawned: 'gunicorn' with pid 14301
+2020-06-08 23:20:08,809 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:12,840 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:13,844 INFO spawned: 'gunicorn' with pid 14315
+2020-06-08 23:20:15,068 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:19,111 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:20,114 INFO spawned: 'gunicorn' with pid 14332
+2020-06-08 23:20:21,331 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:25,368 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:26,371 INFO spawned: 'gunicorn' with pid 14349
+2020-06-08 23:20:27,589 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:31,620 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:32,622 INFO spawned: 'gunicorn' with pid 14368
+2020-06-08 23:20:33,850 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:38,902 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:20:39,905 INFO spawned: 'gunicorn' with pid 14383
+2020-06-08 23:20:41,130 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:20:44,134 WARN received SIGTERM indicating exit request
+2020-06-08 23:20:44,135 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:20:44,138 INFO stopped: apollo (exit status 0)
+2020-06-08 23:20:45,164 INFO stopped: gunicorn (exit status 1)
+2020-06-08 23:20:59,737 INFO daemonizing the supervisord process
+2020-06-08 23:20:59,737 INFO supervisord started with pid 14416
+2020-06-08 23:21:00,740 INFO spawned: 'gunicorn' with pid 14417
+2020-06-08 23:21:00,741 INFO spawned: 'apollo' with pid 14418
+2020-06-08 23:21:01,968 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:01,968 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:05,998 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:07,001 INFO spawned: 'gunicorn' with pid 14448
+2020-06-08 23:21:08,219 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:12,257 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:13,260 INFO spawned: 'gunicorn' with pid 14465
+2020-06-08 23:21:14,479 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:18,515 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:19,517 INFO spawned: 'gunicorn' with pid 14486
+2020-06-08 23:21:20,747 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:24,785 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:25,789 INFO spawned: 'gunicorn' with pid 14499
+2020-06-08 23:21:27,015 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:31,051 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:32,054 INFO spawned: 'gunicorn' with pid 14510
+2020-06-08 23:21:33,272 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:38,312 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:39,315 INFO spawned: 'gunicorn' with pid 14521
+2020-06-08 23:21:40,536 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:44,573 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:45,576 INFO spawned: 'gunicorn' with pid 14540
+2020-06-08 23:21:46,800 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:50,846 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:51,849 INFO spawned: 'gunicorn' with pid 14553
+2020-06-08 23:21:53,100 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:21:57,145 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:21:58,147 INFO spawned: 'gunicorn' with pid 14564
+2020-06-08 23:21:59,455 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:22:03,491 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:22:04,492 INFO spawned: 'gunicorn' with pid 14594
+2020-06-08 23:22:05,713 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:22:09,744 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:22:10,746 INFO spawned: 'gunicorn' with pid 14608
+2020-06-08 23:22:11,963 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:22:16,997 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:22:17,999 INFO spawned: 'gunicorn' with pid 14629
+2020-06-08 23:22:19,267 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:22:23,297 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:22:24,300 INFO spawned: 'gunicorn' with pid 14648
+2020-06-08 23:22:24,525 WARN received SIGTERM indicating exit request
+2020-06-08 23:22:24,525 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:22:24,529 INFO stopped: apollo (exit status 0)
+2020-06-08 23:22:24,529 INFO stopped: gunicorn (terminated by SIGTERM)
+2020-06-08 23:24:03,429 INFO daemonizing the supervisord process
+2020-06-08 23:24:03,430 INFO supervisord started with pid 15015
+2020-06-08 23:24:04,435 INFO spawned: 'gunicorn' with pid 15016
+2020-06-08 23:24:04,437 INFO spawned: 'apollo' with pid 15017
+2020-06-08 23:24:05,677 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:05,677 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:09,712 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:24:10,715 INFO spawned: 'gunicorn' with pid 15050
+2020-06-08 23:24:11,938 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:16,979 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:24:17,982 INFO spawned: 'gunicorn' with pid 15061
+2020-06-08 23:24:19,203 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:23,235 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:24:24,239 INFO spawned: 'gunicorn' with pid 15072
+2020-06-08 23:24:25,463 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:29,500 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:24:30,503 INFO spawned: 'gunicorn' with pid 15091
+2020-06-08 23:24:31,721 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:35,755 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:24:36,762 INFO spawned: 'gunicorn' with pid 15104
+2020-06-08 23:24:37,986 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:24:37,987 WARN received SIGTERM indicating exit request
+2020-06-08 23:24:37,987 INFO waiting for gunicorn, apollo to die
+2020-06-08 23:24:37,991 INFO stopped: apollo (exit status 0)
+2020-06-08 23:24:40,991 INFO waiting for gunicorn to die
+2020-06-08 23:24:42,022 INFO stopped: gunicorn (exit status 1)
+2020-06-08 23:25:24,790 INFO exited: apollo (exit status 0; expected)
+2020-06-08 23:25:25,528 INFO exited: gunicorn (exit status 0; expected)
+2020-06-08 23:25:39,393 INFO daemonizing the supervisord process
+2020-06-08 23:25:39,393 INFO supervisord started with pid 15156
+2020-06-08 23:25:40,396 INFO spawned: 'gunicorn' with pid 15157
+2020-06-08 23:25:40,397 INFO spawned: 'apollo' with pid 15158
+2020-06-08 23:25:41,825 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:25:41,825 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:06,138 INFO daemonizing the supervisord process
+2020-06-08 23:28:06,139 INFO supervisord started with pid 15307
+2020-06-08 23:28:07,142 INFO spawned: 'apollo' with pid 15308
+2020-06-08 23:28:07,143 INFO spawned: 'gunicorn' with pid 15309
+2020-06-08 23:28:08,493 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:08,493 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:12,526 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:13,529 INFO spawned: 'gunicorn' with pid 15340
+2020-06-08 23:28:14,796 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:18,849 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:19,851 INFO spawned: 'gunicorn' with pid 15351
+2020-06-08 23:28:21,130 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:25,165 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:26,168 INFO spawned: 'gunicorn' with pid 15363
+2020-06-08 23:28:27,438 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:31,470 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:32,472 INFO spawned: 'gunicorn' with pid 15374
+2020-06-08 23:28:33,745 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:37,776 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:38,780 INFO spawned: 'gunicorn' with pid 15394
+2020-06-08 23:28:40,071 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:44,112 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:45,115 INFO spawned: 'gunicorn' with pid 15414
+2020-06-08 23:28:46,399 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:50,431 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:51,434 INFO spawned: 'gunicorn' with pid 15425
+2020-06-08 23:28:52,717 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:28:56,767 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:28:57,770 INFO spawned: 'gunicorn' with pid 15434
+2020-06-08 23:28:59,090 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:03,164 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:04,171 INFO spawned: 'gunicorn' with pid 15437
+2020-06-08 23:29:05,447 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:09,481 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:10,482 INFO spawned: 'gunicorn' with pid 15443
+2020-06-08 23:29:11,754 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:15,784 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:16,787 INFO spawned: 'gunicorn' with pid 15446
+2020-06-08 23:29:18,065 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:22,099 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:23,102 INFO spawned: 'gunicorn' with pid 15450
+2020-06-08 23:29:24,378 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:28,411 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:29,413 INFO spawned: 'gunicorn' with pid 15454
+2020-06-08 23:29:30,680 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:34,713 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:35,715 INFO spawned: 'gunicorn' with pid 15457
+2020-06-08 23:29:37,000 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:41,042 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:42,044 INFO spawned: 'gunicorn' with pid 15469
+2020-06-08 23:29:43,368 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:47,397 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:48,400 INFO spawned: 'gunicorn' with pid 15484
+2020-06-08 23:29:49,674 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:29:53,706 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:29:54,708 INFO spawned: 'gunicorn' with pid 15501
+2020-06-08 23:29:55,987 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:30:00,027 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:30:01,029 INFO spawned: 'gunicorn' with pid 15515
+2020-06-08 23:30:02,331 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:30:06,364 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:30:07,367 INFO spawned: 'gunicorn' with pid 15531
+2020-06-08 23:30:08,006 WARN received SIGTERM indicating exit request
+2020-06-08 23:30:08,006 INFO waiting for apollo, gunicorn to die
+2020-06-08 23:30:08,011 INFO stopped: apollo (exit status 0)
+2020-06-08 23:30:11,639 INFO waiting for gunicorn to die
+2020-06-08 23:30:12,666 INFO stopped: gunicorn (exit status 1)
+2020-06-08 23:30:46,210 INFO exited: apollo (exit status 0; expected)
+2020-06-08 23:30:47,038 INFO exited: gunicorn (exit status 0; expected)
+2020-06-08 23:31:01,575 INFO daemonizing the supervisord process
+2020-06-08 23:31:01,575 INFO supervisord started with pid 15580
+2020-06-08 23:31:02,577 INFO spawned: 'apollo' with pid 15581
+2020-06-08 23:31:02,578 INFO spawned: 'gunicorn' with pid 15582
+2020-06-08 23:31:04,032 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:31:04,032 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:31:04,376 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:31:05,378 INFO spawned: 'gunicorn' with pid 15611
+2020-06-08 23:31:06,335 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:31:07,338 INFO spawned: 'gunicorn' with pid 15622
+2020-06-08 23:31:08,298 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:31:10,302 INFO spawned: 'gunicorn' with pid 15642
+2020-06-08 23:31:11,256 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:31:14,263 INFO spawned: 'gunicorn' with pid 15662
+2020-06-08 23:31:15,125 INFO exited: gunicorn (exit status 1; not expected)
+2020-06-08 23:31:16,129 INFO gave up: gunicorn entered FATAL state, too many start retries too quickly
+2020-06-08 23:33:02,208 INFO daemonizing the supervisord process
+2020-06-08 23:33:02,209 INFO supervisord started with pid 15709
+2020-06-08 23:33:03,211 INFO spawned: 'apollo' with pid 15710
+2020-06-08 23:33:03,212 INFO spawned: 'gunicorn' with pid 15711
+2020-06-08 23:33:04,714 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:33:04,714 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:36:53,834 WARN received SIGTERM indicating exit request
+2020-06-08 23:36:53,834 INFO waiting for apollo, gunicorn to die
+2020-06-08 23:36:53,839 INFO exited: apollo (exit status 0; expected)
+2020-06-08 23:36:53,842 INFO stopped: apollo (exit status 0)
+2020-06-08 23:36:54,865 INFO stopped: gunicorn (exit status 0)
+2020-06-08 23:40:01,573 INFO daemonizing the supervisord process
+2020-06-08 23:40:01,573 INFO supervisord started with pid 16017
+2020-06-08 23:40:02,576 INFO spawned: 'apollo' with pid 16019
+2020-06-08 23:40:02,577 INFO spawned: 'gunicorn' with pid 16020
+2020-06-08 23:40:04,052 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:40:04,052 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:41:26,438 WARN received SIGTERM indicating exit request
+2020-06-08 23:41:26,439 INFO waiting for apollo, gunicorn to die
+2020-06-08 23:41:26,443 INFO stopped: apollo (exit status 0)
+2020-06-08 23:41:26,866 INFO stopped: gunicorn (exit status 0)
+2020-06-08 23:42:45,112 INFO daemonizing the supervisord process
+2020-06-08 23:42:45,113 INFO supervisord started with pid 16253
+2020-06-08 23:42:46,114 INFO spawned: 'apollo' with pid 16254
+2020-06-08 23:42:46,114 INFO spawnerr: can't find command '$HOME/Projects/ballot-online/venv/bin/gunicorn'
+2020-06-08 23:42:47,322 INFO success: apollo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-08 23:42:47,323 INFO spawnerr: can't find command '$HOME/Projects/ballot-online/venv/bin/gunicorn'
+2020-06-08 23:42:49,325 INFO spawnerr: can't find command '$HOME/Projects/ballot-online/venv/bin/gunicorn'
+2020-06-08 23:42:52,331 INFO spawnerr: can't find command '$HOME/Projects/ballot-online/venv/bin/gunicorn'
+2020-06-08 23:42:52,331 INFO gave up: gunicorn entered FATAL state, too many start retries too quickly
+2020-06-08 23:45:31,275 WARN received SIGTERM indicating exit request
+2020-06-08 23:45:31,275 INFO waiting for apollo to die
+2020-06-08 23:45:31,279 INFO stopped: apollo (exit status 0)

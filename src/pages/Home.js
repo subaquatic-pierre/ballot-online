@@ -70,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '2rem',
         display: 'block'
     },
+    delButton: {
+        backgroundColor: theme.palette.error.main,
+        display: 'block'
+    },
     signup: {
         color: 'white',
         marginTop: '1rem'
