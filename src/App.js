@@ -26,11 +26,16 @@ const getToken = () => {
 // }
 
 require('dotenv').config()
-const publicUrl = process.env
-console.log(publicUrl)
+const publicIP = process.env.PUBLIC_IP
+console.log(publicIP)
+let link = 'localhost'
+
+if(publicIP) {
+	link = publicIP
+}
 
 const httpLink = createHttpLink({
-  uri: 'http://127.0.0.1:8000/graphql/',
+  uri: `http://${link}:8000/graphql/`,
   fetchOptions: {
     credentials: "omit",
   },
