@@ -27,7 +27,6 @@ Rx==1.6.1
 singledispatch==3.4.0.3
 six==1.15.0
 sqlparse==0.3.1
-supervisor==4.2.0
 urllib3==1.25.9
 whitenoise==5.1.0
 zope.event==4.4
