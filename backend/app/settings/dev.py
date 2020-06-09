@@ -6,13 +6,34 @@ ALLOWED_HOSTS += ['*']
 DEBUG = True
 
 WSGI_APPLICATION = 'app.wsgi.dev.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if config.DATABASE == 'AWS':
+    # ENGINE = 'django.db.backends.postgresql'
+    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
+    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
+    print("-------- DEV SERVER RDS DATABASE STILL SET !!! -------")
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config.NAME,
+            'USER': config.USER,
+            'PASSWORD': config.PASSWORD,
+            'HOST': config.HOST,
+            'PORT': config.PORT,
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # GRAPHENE
 CORS_ORIGIN_WHITELIST = [
