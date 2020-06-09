@@ -27,8 +27,8 @@ const getToken = () => {
 
 require('dotenv').config()
 const publicIP = process.env.REACT_APP_PUBLIC_IP
-console.log(process.env)
-console.log(publicIP)
+
+
 let link = 'localhost'
 
 if (publicIP) {
