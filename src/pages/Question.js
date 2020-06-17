@@ -119,7 +119,6 @@ const Question = props => {
     const [validate, setValidate] = React.useState('');
     const [votes, setVotes] = React.useState([])
     const username = localStorage.getItem('token')
-    const location = useLocation();
     const history = useHistory()
 
     const handleChoiceChange = (event) => {
@@ -143,7 +142,7 @@ const Question = props => {
             }
         ).then(res => {
             console.log(res)
-            history.push(`/question/${id}`)
+            history.push(`/question/${question_id}`)
         }).catch(err => {
             console.log(err)
         })
