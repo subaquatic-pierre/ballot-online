@@ -9,41 +9,29 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import BaseRouter from './routes';
 import Layout from './components/Layout';
 
+// Get public IP from .env file
+require('dotenv').config()
+// const publicIP = process.env.REACT_APP_PUBLIC_IP
+let link = 'localhost';
+
+// Set link depending on environment
+// if (publicIP) {
+//   link = publicIP
+// } else {
+//   link = 'localhost'
+// }
+
+// get the authentication token from local storage if it exists
 const getToken = () => {
   return localStorage.getItem('token');
 }
 
-// const enchancedFetch = (url, init) => {
-//   const token = getToken()
-//   return fetch(url, {
-//     ...init,
-//     headers: {
-//       ...init.headers,
-//       'Access-Control-Allow-Origin': '*',
-//       ...(token && { authorization: `Bearer ${token}` }),
-//     },
-//   }).then(response => response)
-// }
-
-require('dotenv').config()
-const publicIP = process.env.REACT_APP_PUBLIC_IP
-
-
-let link = 'localhost'
-
-if (publicIP) {
-  link = publicIP
-}
-
 const httpLink = createHttpLink({
   uri: `http://${link}:8000/graphql/`,
-  fetchOptions: {
-    credentials: "omit",
-  },
+  credentials: 'same-origin',
 });
 
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
+const authLink = setContext(({ headers }) => {
   const token = getToken()
   // return the headers to the context so httpLink can read them
   return {

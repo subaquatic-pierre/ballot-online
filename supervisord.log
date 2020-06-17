@@ -3622,3 +3622,17 @@ INFO: Gracefully shutting down. Please wait...
 2020-06-08 23:45:31,275 WARN received SIGTERM indicating exit request
 2020-06-08 23:45:31,275 INFO waiting for apollo to die
 2020-06-08 23:45:31,279 INFO stopped: apollo (exit status 0)
+2020-06-17 09:54:22,206 INFO daemonizing the supervisord process
+2020-06-17 09:54:22,209 INFO supervisord started with pid 1579
+2020-06-17 09:54:23,212 INFO spawned: 'gunicorn' with pid 1581
+2020-06-17 09:54:24,933 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-17 10:03:45,751 WARN received SIGTERM indicating exit request
+2020-06-17 10:03:45,751 INFO waiting for gunicorn to die
+2020-06-17 10:03:46,590 INFO stopped: gunicorn (exit status 0)
+2020-06-17 10:04:39,114 INFO daemonizing the supervisord process
+2020-06-17 10:04:39,115 INFO supervisord started with pid 2321
+2020-06-17 10:04:40,119 INFO spawned: 'gunicorn' with pid 2326
+2020-06-17 10:04:41,691 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-06-17 10:09:11,384 WARN received SIGTERM indicating exit request
+2020-06-17 10:09:11,384 INFO waiting for gunicorn to die
+2020-06-17 10:09:12,421 INFO stopped: gunicorn (exit status 0)
