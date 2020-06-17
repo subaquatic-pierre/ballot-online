@@ -1,6 +1,7 @@
 from graphene_django import DjangoObjectType, DjangoListField
 import graphene
 from graphene_django.forms.mutation import DjangoModelFormMutation
+from graphql_jwt.decorators import login_required
 from graphene import relay
 from ballot.models import (
     Question,
@@ -118,6 +119,7 @@ class CreateQuestion(graphene.Mutation):
         )
 
 
+# @login_required
 class DeleteQuestion(graphene.Mutation):
     # return objects from mutation
     question = graphene.Field(QuestionNode)

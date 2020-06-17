@@ -88,7 +88,7 @@ const QuestionCard = props => {
             <CardActions>
                 <Button onClick={() => handleMakeVoteClick(id)} variant='contained' color='primary' size="small">Make Your Vote</Button>
                 {isStaff &&
-                    <Button onClick={() => handleDeleteClick(id)} variant='contained' color='error' size="small">Delete Question</Button>
+                    <Button onClick={() => handleDeleteClick(id)} variant='contained' size="small">Delete Question</Button>
                 }
             </CardActions>
         </Card>

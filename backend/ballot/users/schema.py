@@ -1,5 +1,6 @@
 from graphene_django import DjangoObjectType
 import graphene
+import graphql_jwt
 from django.http import JsonResponse
 from graphene import relay
 from django.contrib.auth.models import User
@@ -53,4 +54,6 @@ class CreateUser(graphene.Mutation):
 
 
 class Mutation(graphene.ObjectType):
+    delete_token_cookie = graphql_jwt.DeleteJSONWebTokenCookie.Field()
+    # delete_refresh_token_cookie = graphql_jwt.refresh_token.DeleteRefreshTokenCookie.Field()
     create_user = CreateUser.Field()

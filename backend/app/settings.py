@@ -5,14 +5,19 @@ config = Config()
 
 SECRET_KEY = config.SECRET_KEY
 
-CORS_ORIGIN_ALLOW_ALL = True
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Base Settings
+WSGI_APPLICATION = 'app.wsgi.application'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = []
 ROOT_URLCONF = 'app.urls'
+
+# DJANGO-ALAUTH
+ACCOUNT_EMAIL_VERIFICATION = None
+# ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 INSTALLED_APPS = [
@@ -22,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # django-allauth
     'allauth',
     'allauth.account',
@@ -29,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
+
     # graphene
     'graphene_django',
     'corsheaders',
     'django_filters',
+
     # myapps
     'ballot',
 ]
@@ -47,6 +55,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+GRAPHENE = {
+    'SCHEMA': 'ballot.schema.schema',
+    'MIDDLEWARE': ['graphql_jwt.middleware.JSONWebTokenMiddleware', ],
+}
 
 TEMPLATES = [
     {
@@ -77,24 +95,44 @@ STATIC_ROOT = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
 
-GRAPHENE = {
-    'SCHEMA': 'ballot.schema.schema',
-    'MIDDLEWARE': ['graphql_jwt.middleware.JSONWebTokenMiddleware', ],
-}
+# Check produciton or development environment
+if config.DATABASE == 'AWS':
+    ALLOWED_HOSTS = ['ballot-online.com']
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config.NAME,
+            'USER': config.USER,
+            'PASSWORD': config.PASSWORD,
+            'HOST': config.HOST,
+            'PORT': config.PORT,
+        }
+    }
 
-# DJANGO-ALAUTH
-ACCOUNT_EMAIL_VERIFICATION = None
-# ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-SITE_ID = 1
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-LOGIN_URL = 'login/'
-LOGIN_REDIRECT_URL = '/'
+    AUTH_PASSWORD_VALIDATORS = [
+        {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+    ]
 
-AUTHENTICATION_BACKENDS = [
-    'graphql_jwt.backends.JSONWebTokenBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
+# development environment
+else:
+    ALLOWED_HOSTS = ['*']
+    DEBUG = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+    # Cors Header Settings
+    CORS_ALLOW_CREDENTIALS = True
+    CORS_ORIGIN_ALLOW_ALL = True
+    CSRF_COOKIE_NAME = 'csrftoken'
+
 
 # ---------------------- HIDE ALL BELOW FOR SECURITY ----------------------
 

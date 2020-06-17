@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
-import { useApolloClient } from 'react-apollo';
+import { useApolloClient, useMutation } from 'react-apollo';
 import {
   Link,
   withRouter,
@@ -12,10 +12,19 @@ import {
   Tab,
 } from '@material-ui/core'
 
+const DELETE_JWT = gql`
+  mutation {
+    deleteTokenCookie {
+      deleted
+    }
+  }
+  `
+
 
 const Header = (props) => {
   const { isStaff } = props
   const history = useHistory()
+  const [logout] = useMutation(DELETE_JWT)
   const [token, setToken] = React.useState(null)
 
   history.listen(history => {
@@ -39,9 +48,15 @@ const Header = (props) => {
 
   const handleLogout = () => {
     localStorage.removeItem('token')
-    history.push('/')
-    window.location.reload()
     setToken(null)
+    logout()
+      .then(res => {
+        history.push('/')
+        window.location.reload()
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   if (token !== null) {

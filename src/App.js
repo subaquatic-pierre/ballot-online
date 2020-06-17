@@ -12,14 +12,6 @@ import Layout from './components/Layout';
 // Get public IP from .env file
 require('dotenv').config()
 // const publicIP = process.env.REACT_APP_PUBLIC_IP
-let link = 'localhost';
-
-// Set link depending on environment
-// if (publicIP) {
-//   link = publicIP
-// } else {
-//   link = 'localhost'
-// }
 
 // get the authentication token from local storage if it exists
 const getToken = () => {
@@ -27,8 +19,8 @@ const getToken = () => {
 }
 
 const httpLink = createHttpLink({
-  uri: `http://${link}:8000/graphql/`,
-  credentials: 'same-origin',
+  uri: `/graphql/`,
+  credentials: 'include',
 });
 
 const authLink = setContext(({ headers }) => {
