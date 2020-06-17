@@ -143,8 +143,7 @@ const Question = props => {
             }
         ).then(res => {
             console.log(res)
-            history.go()
-            return <Redirect push to="/" />
+            history.push(`/question/${id}`)
         }).catch(err => {
             console.log(err)
         })
