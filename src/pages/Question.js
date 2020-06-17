@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { withRouter } from "react-router-dom";
 import gql from 'graphql-tag';
-import { useHistory } from 'react-router'
+import { useHistory, Redirect, useLocation } from 'react-router'
 import { makeStyles } from '@material-ui/core/styles';
 import {
     CircularProgress,
@@ -18,7 +18,6 @@ import {
     RadioGroup,
     FormControlLabel,
     Box,
-    TextField,
     List,
     ListItem,
     ListItemText
@@ -113,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Question = props => {
-    const [render, setRender] = React.useState(true)
     const question_id = props.match.params.id
     const classes = useStyles()
     const [createVote] = useMutation(CREATE_VOTE)
@@ -121,6 +119,7 @@ const Question = props => {
     const [validate, setValidate] = React.useState('');
     const [votes, setVotes] = React.useState([])
     const username = localStorage.getItem('token')
+    const location = useLocation();
     const history = useHistory()
 
     const handleChoiceChange = (event) => {
@@ -143,8 +142,9 @@ const Question = props => {
                 }
             }
         ).then(res => {
-            window.location.reload()
-            // history.push('/')
+            console.log(res)
+            history.go()
+            return <Redirect push to="/" />
         }).catch(err => {
             console.log(err)
         })
