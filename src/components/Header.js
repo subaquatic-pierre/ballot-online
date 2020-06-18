@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
-import { useApolloClient, useMutation } from 'react-apollo';
+import { useMutation } from 'react-apollo';
 import {
   Link,
   withRouter,
@@ -51,8 +51,7 @@ const Header = (props) => {
     setToken(null)
     logout()
       .then(res => {
-        history.push('/')
-        window.location.reload()
+        history.go()
       })
       .catch(err => {
         console.log(err)

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { withRouter } from "react-router-dom";
 import gql from 'graphql-tag';
-import { useHistory, Redirect, useLocation } from 'react-router'
+import { useHistory, } from 'react-router'
 import { makeStyles } from '@material-ui/core/styles';
 import {
     CircularProgress,
@@ -142,7 +142,7 @@ const Question = props => {
             }
         ).then(res => {
             console.log(res)
-            history.push(`/question/${question_id}`)
+            history.go()
         }).catch(err => {
             console.log(err)
         })
