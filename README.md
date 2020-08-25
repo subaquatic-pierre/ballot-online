@@ -6,7 +6,7 @@ The schema is transformed from SQL to GraphQL using django-graphene.
 
 ### Create your own account and make a vote today !!
 
-## Website URL:
+### Website URL:
 
 [voting-app](www.ballot-online.com)
 
