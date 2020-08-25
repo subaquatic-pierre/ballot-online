@@ -8,7 +8,7 @@ The schema is transformed from SQL to GraphQL using django-graphene.
 
 ### Website URL:
 
-[voting-app](www.ballot-online.com)
+[voting-app](https://www.ballot-online.com)
 
 The application was created during the Cloud Computing Micro Masters course.
 
