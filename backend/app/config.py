@@ -1,18 +1,15 @@
 import os
-import json
-# path to config file outsite django server
-home = os.path.expanduser('~')
-with open(home + '/etc/ballot-online/config.json') as f:
-    config = json.load(f)
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-class Config():
-
-    DEBUG = config.get("DEBUG")
-    SECRET_KEY = config.get("SECRET_KEY")
-    DATABASE = config.get("DATABASE")
-    NAME = config.get("NAME")
-    USER = config.get("USER")
-    PASSWORD = config.get("PASSWORD")
-    HOST = config.get("HOST")
-    PORT = config.get("PORT")
+class Config:
+    DEBUG = os.getenv("DEBUG")
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    DATABASE = os.getenv("DATABASE")
+    NAME = os.getenv("NAME")
+    USER = os.getenv("USER")
+    PASSWORD = os.getenv("PASSWORD")
+    HOST = os.getenv("BACKEND_HOST")
+    PORT = os.getenv("BACKEND_PORT")
