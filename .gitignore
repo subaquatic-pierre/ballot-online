@@ -3,6 +3,9 @@ __pycache__
 config.json
 supervisord.conf
 supervisord.log
+.cache/
+public/
+build/
 
 # dependencies
 /node_modules
