@@ -40,7 +40,7 @@ const Header = (props) => {
     setToken(null);
     logout()
       .then((res) => {
-        location.reload();
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);

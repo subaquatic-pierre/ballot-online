@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import { Typography, Grid, Card, Button } from "@material-ui/core";
+import { navigate } from "gatsby";
 import { useQuery, gql } from "@apollo/client";
 
 const QUERY_USERS = gql`
@@ -39,7 +40,7 @@ const Admin = (props) => {
   const { data, loading } = useQuery(QUERY_USERS);
 
   const handleCreateQuestionClick = () => {
-    props.history.push("/create-question");
+    navigate("/create-question");
   };
 
   if (loading) return <p>Loading...</p>;

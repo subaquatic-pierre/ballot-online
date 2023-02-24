@@ -10,6 +10,7 @@ import {
 import { useMutation, gql } from "@apollo/client";
 import { useLocation } from "@reach/router";
 import { makeStyles } from "@material-ui/core";
+import { navigate } from "gatsby";
 
 const DELETE_QUESTION = gql`
   mutation DeleteQuestion($questionId: String!) {
@@ -60,9 +61,9 @@ const QuestionCard = (props) => {
 
   const handleMakeVoteClick = (id) => {
     if (!username) {
-      location.assign("/login");
+      navigate("/login");
     } else {
-      location.assign(`/question/${id}`);
+      navigate(`/question/${id}`);
     }
   };
 

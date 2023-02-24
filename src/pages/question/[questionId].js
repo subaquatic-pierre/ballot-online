@@ -21,7 +21,8 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
-import Alert from "../components/Alert";
+import Alert from "../../components/Alert";
+import Layout from "../../components/Layout";
 
 const QUESTION_QUERY = gql`
   query GetQuestion($questionId: String!) {
@@ -110,14 +111,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Question = (props) => {
-  const question_id = props.match.params.id;
+  const location = useLocation();
+  const pathSplit = location.pathname.split("/");
+  const pathLen = pathSplit.length;
+  const question_id = pathSplit[pathLen - 2];
   const classes = useStyles();
   const [createVote] = useMutation(CREATE_VOTE);
   const [choiceValue, setChoiceValue] = React.useState("");
   const [validate, setValidate] = React.useState("");
   const [votes, setVotes] = React.useState([]);
   const username = localStorage.getItem("token");
-  const location = useLocation();
 
   const handleChoiceChange = (event) => {
     setChoiceValue(event.target.value);
@@ -139,7 +142,7 @@ const Question = (props) => {
     })
       .then((res) => {
         console.log(res);
-        location.reload();
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -182,7 +185,7 @@ const Question = (props) => {
   };
 
   return (
-    <>
+    <Layout>
       <Typography variant="h1">Question</Typography>
       <Grid container justifyContent="center">
         <Grid container item sm={6} direction="column" xs={12}>
@@ -262,7 +265,7 @@ const Question = (props) => {
           </Card>
         </Grid>
       </Grid>
-    </>
+    </Layout>
   );
 };
 

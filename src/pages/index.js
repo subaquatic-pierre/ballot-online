@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { useQuery, useLazyQuery, gql } from "@apollo/client";
-import { makeStyles } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import { Typography, Card, Grid, Button } from "@material-ui/core";
 
 import Alert from "../components/Alert";
@@ -140,14 +140,18 @@ const Home = (props) => {
             {makeQueryRes.error ? (
               <>
                 <Typography variant="h6">Error</Typography>
-                <Typography>
-                  {JSON.stringify(makeQueryRes.error.message)}
-                </Typography>
+                <Box>
+                  <pre>
+                    {JSON.stringify(makeQueryRes.error.message, null, 2)}
+                  </pre>
+                </Box>
               </>
             ) : (
               <>
                 <Typography variant="h6">Success</Typography>
-                <Typography>{JSON.stringify(makeQueryRes.data)}</Typography>
+                <Box>
+                  <pre>{JSON.stringify(makeQueryRes.data, null, 2)}</pre>
+                </Box>
               </>
             )}
             <Button

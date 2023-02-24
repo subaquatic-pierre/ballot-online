@@ -22,11 +22,12 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
-import DatePicker from "@mui/lab/DatePicker";
-import { useMutation } from "react-apollo";
-import gql from "graphql-tag";
+// import DatePicker from "@mui/lab/DatePicker";
+import { useMutation, gql } from "@apollo/client";
 import DateFnsUtils from "@date-io/date-fns";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Layout from "../components/Layout";
+import { navigate } from "gatsby";
 
 const CREATE_QUESTION_MUTATION = gql`
   mutation CreateQuestion(
@@ -87,7 +88,7 @@ const CreateQuestion = (props) => {
   const [createQuestion] = useMutation(CREATE_QUESTION_MUTATION);
   const [subtitle, setSubtitle] = React.useState("");
   const [questionType, setQuestionType] = React.useState("2C");
-  const [expires, setExpires] = React.useState(new Date("2020-08-18"));
+  const [expires, setExpires] = React.useState(new Date("2040-08-18"));
   const [choices, setChoices] = React.useState([]);
   const [choice, setChoice] = React.useState("");
   const classes = useStyles();
@@ -131,8 +132,7 @@ const CreateQuestion = (props) => {
       },
     })
       .then((res) => {
-        props.history.push("/");
-        window.location.reload();
+        navigate("/");
       })
       .catch((err) => {
         console.log(err.message);
@@ -140,7 +140,7 @@ const CreateQuestion = (props) => {
   };
 
   return (
-    <>
+    <Layout>
       <Typography variant="h1">Create Question</Typography>
       <Grid container jutify="center">
         <Grid item sm={8}>
@@ -185,7 +185,7 @@ const CreateQuestion = (props) => {
               </FormControl>
               <FormControl margin="normal" fullWidth component="fieldset">
                 <FormLabel component="legend">Expirey Date</FormLabel>
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
                   <KeyboardDatePicker
                     disableToolbar
                     variant="inline"
@@ -199,7 +199,7 @@ const CreateQuestion = (props) => {
                       "aria-label": "change date",
                     }}
                   />
-                </MuiPickersUtilsProvider>
+                </MuiPickersUtilsProvider> */}
               </FormControl>
               <FormControl margin="normal" fullWidth component="fieldset">
                 <FormLabel component="legend">Choices:</FormLabel>
@@ -249,7 +249,7 @@ const CreateQuestion = (props) => {
           </Card>
         </Grid>
       </Grid>
-    </>
+    </Layout>
   );
 };
 

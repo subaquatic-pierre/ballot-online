@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { useMutation, gql } from "@apollo/client";
+import { useLocation } from "@reach/router";
 
 import { makeStyles } from "@material-ui/core";
 import {
@@ -12,6 +13,8 @@ import {
   FormLabel,
   TextField,
 } from "@material-ui/core";
+
+import Layout from "../components/Layout";
 
 const LOGIN = gql`
   mutation TokenAuth($username: String!, $password: String!) {
@@ -45,8 +48,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login = (props) => {
+const Login = () => {
   let token = null;
+  const location = useLocation();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [login] = useMutation(LOGIN);
@@ -65,7 +69,7 @@ const Login = (props) => {
       .then((res) => {
         token = res.data.tokenAuth.token;
         localStorage.setItem("token", token);
-        props.history.push("/");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -74,12 +78,12 @@ const Login = (props) => {
 
   useEffect(() => {
     if (token !== null) {
-      props.history.push("/");
+      location.assign("/");
     }
-  }, [token, props.history]);
+  }, [token, location]);
 
   return (
-    <>
+    <Layout>
       <Typography variant="h1">Login</Typography>
       <Grid container jutify="center">
         <Grid item sm={6}>
@@ -118,8 +122,8 @@ const Login = (props) => {
           </Card>
         </Grid>
       </Grid>
-    </>
+    </Layout>
   );
 };
 
-export default withRouter(Login);
+export default Login;

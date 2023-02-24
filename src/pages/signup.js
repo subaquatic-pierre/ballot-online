@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useLocation } from "@reach/router";
 import { makeStyles } from "@material-ui/core";
 import {
   Card,
@@ -13,6 +14,8 @@ import { useMutation, gql } from "@apollo/client";
 
 import Loading from "../components/Loading";
 import Alert from "../components/Alert";
+import Layout from "../components/Layout";
+import { navigate } from "gatsby";
 
 const CREATE_USER = gql`
   mutation CreateUser($email: String!, $username: String!, $password: String!) {
@@ -44,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Signup = (props) => {
+  const location = useLocation();
   const { error, loading, token } = props;
   const [createUser] = useMutation(CREATE_USER);
   const [username, setUsername] = React.useState("");
@@ -77,7 +81,7 @@ const Signup = (props) => {
     })
       .then((res) => {
         console.log(res);
-        props.history.push("/login");
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
@@ -87,13 +91,13 @@ const Signup = (props) => {
   useEffect(() => {
     if (token) {
       if (token) {
-        props.history.push("/");
+        navigate("/");
       }
     }
-  }, [token, props.history]);
+  }, [token, location]);
 
   return (
-    <>
+    <Layout>
       <Typography variant="h1">Login</Typography>
       <Grid container jutify="center">
         <Grid item sm={6}>
@@ -158,7 +162,7 @@ const Signup = (props) => {
           </Card>
         </Grid>
       </Grid>
-    </>
+    </Layout>
   );
 };
 
