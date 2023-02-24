@@ -103,6 +103,21 @@ const Home = (props) => {
   return (
     <Layout>
       <Typography variant="h1">Home</Typography>
+      <Box my={4}>
+        <Typography variant="h6">
+          Please note this project is still in beta <br />
+          checkout the github{" "}
+          <span>
+            <a
+              href="https://github.com/subaquatic-pierre/ballot-online"
+              target="_blank"
+            >
+              README.md
+            </a>
+          </span>{" "}
+          for more information or to contribute to the project
+        </Typography>
+      </Box>
       {loading ? (
         <Loading />
       ) : error ? (
