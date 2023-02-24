@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "Ballot Online",
@@ -8,9 +12,6 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-plugin-apollo",
-      options: {
-        uri: "http://127.0.0.1:8000/graphql",
-      },
     },
   ],
 };

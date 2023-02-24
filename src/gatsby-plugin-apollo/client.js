@@ -31,7 +31,7 @@ const token = getToken();
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
-    uri: `http://127.0.0.1:8000/graphql/`,
+    uri: `${process.env.GATSBY_API_URL}`,
     credentials: "include",
     headers: {
       Authorization: token ? `JWT ${token}` : "",
