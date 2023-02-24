@@ -63,8 +63,8 @@ npm run start
 1. Run backend server
 
 ```sh
-
-./venv/bin/gunicorn app.wsgi:application -c ./backend/app/gunicorn.config.py
+cd backend
+../venv/bin/gunicorn app.wsgi:application -c app/gunicorn.config.py
 
 ```
 
