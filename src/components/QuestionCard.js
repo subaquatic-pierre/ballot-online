@@ -46,7 +46,6 @@ const QuestionCard = (props) => {
   const [deleteQuestion] = useMutation(DELETE_QUESTION);
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  const username = localStorage.getItem("token");
 
   const handleDeleteClick = (question_id) => {
     deleteQuestion({ variables: { questionId: question_id } })
@@ -60,6 +59,7 @@ const QuestionCard = (props) => {
   };
 
   const handleMakeVoteClick = (id) => {
+    const username = localStorage.getItem("token");
     if (!username) {
       navigate("/login");
     } else {

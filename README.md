@@ -64,6 +64,8 @@ npm run start
 
 ```sh
 
+./venv/bin/gunicorn app.wsgi:application -c ./backend/app/gunicorn.config.py
+
 ```
 
 2. Server gatsby public directory with Nginx

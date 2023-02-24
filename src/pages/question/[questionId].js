@@ -120,7 +120,6 @@ const Question = (props) => {
   const [choiceValue, setChoiceValue] = React.useState("");
   const [validate, setValidate] = React.useState("");
   const [votes, setVotes] = React.useState([]);
-  const username = localStorage.getItem("token");
 
   const handleChoiceChange = (event) => {
     setChoiceValue(event.target.value);
@@ -128,6 +127,7 @@ const Question = (props) => {
 
   // Create a vote
   const handleClick = (event) => {
+    const username = localStorage.getItem("token");
     if (!username) {
       return setValidate("Please enter username");
     }

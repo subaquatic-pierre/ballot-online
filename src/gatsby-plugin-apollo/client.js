@@ -2,7 +2,9 @@ import fetch from "isomorphic-fetch";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
 const getToken = () => {
-  return localStorage.getItem("token");
+  if (typeof window !== `undefined`) {
+    return localStorage.getItem("token");
+  }
 };
 
 // const httpLink = createHttpLink({
